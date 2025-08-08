@@ -25,7 +25,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="bg-gradient-to-r from-travel-blue to-travel-red p-2 rounded-lg">
+            <div className="bg-gradient-to-r from-travel-blue to-travel-blue p-2 rounded-lg">
               <Plane className="h-6 w-6 text-white" />
             </div>
             <div>

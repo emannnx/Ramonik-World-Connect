@@ -85,7 +85,7 @@ const ServicesSection = () => {
             return (
               <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-md">
                 <CardContent className="p-6">
-                  <div className="bg-gradient-to-r from-travel-blue to-travel-red p-3 rounded-lg w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-gradient-to-r from-travel-blue to-travel-blue p-3 rounded-lg w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
                     <IconComponent className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-travel-blue mb-3 group-hover:text-travel-red transition-colors duration-300">
