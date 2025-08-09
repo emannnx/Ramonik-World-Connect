@@ -29,7 +29,7 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button variant="hero" size="lg" className="text-lg px-8 py-4">
+            <Button onClick={() => window.open('https://wa.me/16677700580')} variant="hero" size="lg" className="text-lg px-8 py-4">
               Plan Your Trip
             </Button>
             <Button  size="lg" className="text-lg px-8 py-4 border-white text-blue hover:bg-blue hover:text-travel-white">
