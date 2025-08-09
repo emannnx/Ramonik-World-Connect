@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MapPin, Users, Award, Heart } from "lucide-react";
 import heroImage from "@/assets/hero-travel.jpg";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -32,9 +33,14 @@ const HeroSection = () => {
             <Button onClick={() => window.open('https://wa.me/16677700580')} variant="hero" size="lg" className="text-lg px-8 py-4">
               Plan Your Trip
             </Button>
-            <Button  size="lg" className="text-lg px-8 py-4 border-white text-blue hover:bg-blue hover:text-travel-white">
-              View Destinations
-            </Button>
+            <Link to="/destinations">
+      <Button
+        size="lg"
+        className="text-lg px-8 py-4 border-white text-blue hover:bg-blue hover:text-travel-white"
+      >
+        View Destinations
+      </Button>
+    </Link>
           </div>
 
           {/* Stats */}

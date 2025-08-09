@@ -12,6 +12,7 @@ import {
   User, 
   Package 
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ServicesSection = () => {
   const services = [
@@ -101,9 +102,11 @@ const ServicesSection = () => {
         </div>
 
         <div className="text-center">
+        <Link to="/services"> 
           <Button variant="travel" size="lg" className="px-8 py-4">
             View All Services
           </Button>
+        </Link>
         </div>
       </div>
     </section>
