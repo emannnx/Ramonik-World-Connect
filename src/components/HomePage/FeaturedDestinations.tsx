@@ -5,6 +5,7 @@ import parisImage from "@/assets/destinations/paris.jpg";
 import dubaiImage from "@/assets/destinations/dubai.jpg";
 import londonImage from "@/assets/destinations/london.jpg";
 import capetownImage from "@/assets/destinations/capetown.jpg";
+import { Link } from "react-router-dom";
 
 const FeaturedDestinations = () => {
   const destinations = [
@@ -74,7 +75,7 @@ const FeaturedDestinations = () => {
                 <p className="text-muted-foreground text-sm mb-4">{destination.description}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-travel-red font-bold">{destination.price}</span>
-                  <Button variant="outline" size="sm">
+                  <Button onClick={() => window.open('https://wa.me/16677700580')}  variant="outline" size="sm">
                     Learn More
                   </Button>
                 </div>
@@ -84,9 +85,11 @@ const FeaturedDestinations = () => {
         </div>
 
         <div className="text-center">
+          <Link to="/destinations"> 
           <Button variant="travel" size="lg" className="px-8 py-4">
             View All Destinations
           </Button>
+          </Link>
         </div>
       </div>
     </section>
