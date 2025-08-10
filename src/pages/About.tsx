@@ -3,6 +3,7 @@ import Footer from "@/components/Layout/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Users, Globe, Award, Heart, Target } from "lucide-react";
+import AboutPlane from "../assets/AboutPlane.jpeg"
 
 const About = () => {
   const values = [
@@ -44,7 +45,10 @@ const About = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-travel-blue  text-white py-20">
+      <section className="bg-gradient-to-r from-travel-blue text-white py-20 bg-cover bg-center"
+      style={{
+        backgroundImage: `url(${AboutPlane})`, backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat",
+      }}>
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">About Ramonik Travel & Tours</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">
