@@ -98,7 +98,7 @@ const About = () => {
               return (
                 <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
                   <CardContent className="p-6">
-                    <div className="bg-gradient-to-r from-travel-blue to-travel-red p-4 rounded-full w-fit mx-auto mb-4">
+                    <div className="bg-gradient-to-r from-travel-blue to-travel-blue p-4 rounded-full w-fit mx-auto mb-4">
                       <IconComponent className="h-8 w-8 text-white" />
                     </div>
                     <h3 className="text-xl font-semibold text-travel-blue mb-3">{value.title}</h3>
@@ -127,7 +127,7 @@ const About = () => {
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-travel-blue to-travel-red p-8 rounded-lg text-white">
+            <div className="bg-gradient-to-br from-travel-blue to-travel-blue p-8 rounded-lg text-white">
               <h3 className="text-2xl font-bold mb-6">Our Commitment to You</h3>
               <p className="mb-6">
                 We understand that every traveler is unique, and that's why we take the time to understand 
