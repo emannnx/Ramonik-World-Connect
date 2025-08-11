@@ -181,9 +181,14 @@ const Services = () => {
           </div>
 
           <div className="text-center">
-            <Button variant="hero" size="lg" className="px-8 py-4">
-              Get Started Today
-            </Button>
+            <Button 
+  variant="hero" 
+  size="lg" 
+  className="px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white"
+>
+  Get Started Today
+</Button>
+
           </div>
         </div>
       </section>
