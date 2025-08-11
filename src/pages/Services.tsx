@@ -185,6 +185,7 @@ const Services = () => {
   variant="hero" 
   size="lg" 
   className="px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white"
+  onClick={() => window.open('https://wa.me/16677700580')}
 >
   Get Started Today
 </Button>
