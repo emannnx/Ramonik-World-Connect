@@ -106,7 +106,7 @@ const Services = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-travel-blue to-travel-red text-white py-20">
+      <section className="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">
@@ -125,11 +125,11 @@ const Services = () => {
                 <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <CardContent className="p-8">
                     <div className="flex items-start space-x-4">
-                      <div className="bg-gradient-to-r from-travel-blue to-travel-red p-3 rounded-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                      <div className="bg-gradient-to-r from-travel-blue to-travel-blue p-3 rounded-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                         <IconComponent className="h-8 w-8 text-white" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-travel-blue mb-3 group-hover:text-travel-red transition-colors duration-300">
+                        <h3 className="text-2xl font-bold text-travel-blue mb-3 group-hover:text-travel-Blue transition-colors duration-300">
                           {service.title}
                         </h3>
                         <p className="text-muted-foreground mb-4 leading-relaxed">
