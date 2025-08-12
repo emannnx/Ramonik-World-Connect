@@ -901,7 +901,7 @@ const Destinations = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-travel-blue to-travel-red text-white py-20">
+      <section className="bg-gradient-to-r from-travel-blue to-travel-blue text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Explore 60 Amazing Destinations</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">
