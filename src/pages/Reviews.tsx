@@ -171,7 +171,7 @@ const Reviews = () => {
         <div className="container mx-auto px-4">
           {loading ? (
             <div className="text-center">
-              <div className="text-xl text-muted-foreground">Loading reviews....</div>
+              <div className="text-xl text-muted-foreground">Loading reviews.....</div>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
