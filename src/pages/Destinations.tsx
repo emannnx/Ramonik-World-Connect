@@ -329,7 +329,6 @@ const Destinations = () => {
       rating: 4.6,
       duration: "6-9 days",
       groupSize: "2-18 people",
-      price: "From $799",
       image: cairoImage,
       description: "Ancient wonders and Islamic architecture in the cradle of civilization.",
       highlights: ["Pyramids of Giza", "Egyptian Museum", "Khan el-Khalili", "Sphinx"]
@@ -341,7 +340,6 @@ const Destinations = () => {
       rating: 4.8,
       duration: "7-12 days",
       groupSize: "2-14 people",
-      price: "From $1,299",
       image: nairobiImage,
       description: "Gateway to incredible safari adventures and wildlife conservation experiences.",
       highlights: ["Maasai Mara", "David Sheldrick Sanctuary", "Giraffe Centre", "Safari Tours"]
@@ -353,7 +351,6 @@ const Destinations = () => {
       rating: 4.4,
       duration: "5-8 days",
       groupSize: "2-16 people",
-      price: "From $699",
       image: lagosImage,
       description: "Vibrant cultural hub with Afrobeat music, contemporary art, and bustling markets.",
       highlights: ["Victoria Island", "Lekki Beach", "National Theatre", "Nike Art Gallery"]
@@ -365,7 +362,6 @@ const Destinations = () => {
       rating: 4.8,
       duration: "6-10 days",
       groupSize: "2-20 people",
-      price: "From $1,399",
       image: sydneyImage,
       description: "Iconic harbor city with stunning beaches, world-class dining, and outdoor lifestyle.",
       highlights: ["Sydney Opera House", "Harbour Bridge", "Bondi Beach", "Royal Botanic Gardens"]
@@ -377,7 +373,6 @@ const Destinations = () => {
       rating: 4.7,
       duration: "5-9 days",
       groupSize: "2-18 people",
-      price: "From $1,299",
       image: melbourneImage,
       description: "Coffee culture capital with street art, hidden laneways, and cultural sophistication.",
       highlights: ["Federation Square", "Royal Botanic Gardens", "St. Kilda", "Great Ocean Road"]
@@ -389,7 +384,6 @@ const Destinations = () => {
       rating: 4.7,
       duration: "6-10 days",
       groupSize: "2-16 people",
-      price: "From $1,399",
       image: aucklandImage,
       description: "Adventure playground with stunning harbors, volcanoes, and outdoor activities.",
       highlights: ["Sky Tower", "Waiheke Island", "Hobbiton", "Bay of Islands"]
@@ -401,7 +395,6 @@ const Destinations = () => {
       rating: 4.8,
       duration: "6-9 days",
       groupSize: "2-18 people",
-      price: "From $999",
       image: rioImage,
       description: "Carnival capital with iconic beaches, Christ the Redeemer, and vibrant culture.",
       highlights: ["Christ the Redeemer", "Copacabana Beach", "Sugarloaf Mountain", "Carnival"]
@@ -413,7 +406,6 @@ const Destinations = () => {
       rating: 4.6,
       duration: "5-8 days",
       groupSize: "2-18 people",
-      price: "From $849",
       image: buenosairesImage,
       description: "Tango birthplace with European elegance, steakhouses, and passionate culture.",
       highlights: ["La Boca", "Recoleta Cemetery", "Puerto Madero", "Tango Shows"]
@@ -425,7 +417,6 @@ const Destinations = () => {
       rating: 4.6,
       duration: "4-7 days",
       groupSize: "2-20 people",
-      price: "From $899",
       image: torontoImage,
       description: "Multicultural metropolis with CN Tower, diverse neighborhoods, and nearby Niagara Falls.",
       highlights: ["CN Tower", "Distillery District", "Casa Loma", "Niagara Falls"]
@@ -437,7 +428,6 @@ const Destinations = () => {
       rating: 4.7,
       duration: "5-8 days",
       groupSize: "2-18 people",
-      price: "From $999",
       image: vancouverImage,
       description: "Mountain-meets-ocean city with outdoor adventures and urban sophistication.",
       highlights: ["Stanley Park", "Capilano Bridge", "Whistler", "Granville Island"]
@@ -449,7 +439,6 @@ const Destinations = () => {
       rating: 4.5,
       duration: "5-8 days",
       groupSize: "2-20 people",
-      price: "From $1,099",
       image: losangelesImage,
       description: "Hollywood glamour meets beach culture in the City of Angels.",
       highlights: ["Hollywood Sign", "Santa Monica Pier", "Beverly Hills", "Griffith Observatory"]
