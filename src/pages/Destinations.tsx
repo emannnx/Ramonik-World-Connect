@@ -109,7 +109,6 @@ const Destinations = () => {
       rating: 4.7,
       duration: "5-8 days",
       groupSize: "2-25 people",
-      price: "From $799",
       image: londonImage,
       description: "Discover history, culture, and royal heritage in Britain's vibrant capital city.",
       highlights: ["Buckingham Palace", "British Museum", "Tower Bridge", "West End Shows"]
@@ -121,7 +120,6 @@ const Destinations = () => {
       rating: 4.9,
       duration: "7-10 days",
       groupSize: "2-12 people",
-      price: "From $1,099",
       image: capetownImage,
       description: "Stunning landscapes and vibrant culture at the southern tip of the African continent.",
       highlights: ["Table Mountain", "Wine Country", "Penguin Colony", "Safari Tours"]
@@ -133,8 +131,7 @@ const Destinations = () => {
       rating: 4.8,
       duration: "6-9 days",
       groupSize: "2-18 people",
-      price: "From $1,399",
-      image: tokyoImage,
+        image: tokyoImage,
       description: "A fascinating blend of ancient traditions and cutting-edge technology.",
       highlights: ["Sensoji Temple", "Shibuya Crossing", "Mount Fuji", "Traditional Cuisine"]
     },
@@ -145,7 +142,6 @@ const Destinations = () => {
       rating: 4.6,
       duration: "4-7 days",
       groupSize: "1-20 people",
-      price: "From $999",
       image: newyorkImage,
       description: "The city that never sleeps offers endless entertainment and iconic landmarks.",
       highlights: ["Statue of Liberty", "Times Square", "Central Park", "Broadway Shows"]
@@ -157,8 +153,7 @@ const Destinations = () => {
       rating: 4.9,
       duration: "5-7 days",
       groupSize: "2-10 people",
-      price: "From $1,199",
-      image: santoriniImage,
+        image: santoriniImage,
       description: "Breathtaking sunsets and white-washed buildings overlooking the Aegean Sea.",
       highlights: ["Sunset in Oia", "Wine Tasting", "Volcanic Beaches", "Cycladic Architecture"]
     },
@@ -169,7 +164,6 @@ const Destinations = () => {
       rating: 4.7,
       duration: "7-12 days",
       groupSize: "2-15 people",
-      price: "From $799",
       image: baliImage,
       description: "Tropical paradise with beautiful beaches, temples, and rich cultural heritage.",
       highlights: ["Rice Terraces", "Beach Resorts", "Hindu Temples", "Ubud Monkey Forest"]
@@ -181,7 +175,6 @@ const Destinations = () => {
       rating: 4.8,
       duration: "5-8 days",
       groupSize: "2-20 people",
-      price: "From $949",
       image: romeImage,
       description: "Ancient history comes alive in the Eternal City with magnificent ruins and Renaissance art.",
       highlights: ["Colosseum", "Vatican City", "Roman Forum", "Trevi Fountain"]
@@ -193,7 +186,6 @@ const Destinations = () => {
       rating: 4.7,
       duration: "4-7 days",
       groupSize: "2-18 people",
-      price: "From $849",
       image: barcelonaImage,
       description: "Gaudi's masterpieces and vibrant Catalan culture meet beautiful Mediterranean beaches.",
       highlights: ["Sagrada Familia", "Park Güell", "Las Ramblas", "Gothic Quarter"]
