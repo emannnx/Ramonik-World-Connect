@@ -263,7 +263,6 @@ const Destinations = () => {
       rating: 4.6,
       duration: "5-9 days",
       groupSize: "2-20 people",
-      price: "From $699",
       image: bangkokImage,
       description: "Vibrant street life, ornate temples, and incredible cuisine in Thailand's capital.",
       highlights: ["Grand Palace", "Wat Pho", "Floating Markets", "Street Food Tours"]
@@ -275,7 +274,6 @@ const Destinations = () => {
       rating: 4.7,
       duration: "3-6 days",
       groupSize: "1-18 people",
-      price: "From $899",
       image: singaporeImage,
       description: "Futuristic city-state blending cultures, cuisine, and cutting-edge architecture.",
       highlights: ["Gardens by the Bay", "Marina Bay Sands", "Chinatown", "Sentosa Island"]
@@ -287,7 +285,6 @@ const Destinations = () => {
       rating: 4.6,
       duration: "4-7 days",
       groupSize: "1-16 people",
-      price: "From $999",
       image: hongkongImage,
       description: "East meets West in this dynamic city with stunning skylines and dim sum culture.",
       highlights: ["Victoria Peak", "Star Ferry", "Temple Street Market", "Lantau Island"]
@@ -299,7 +296,6 @@ const Destinations = () => {
       rating: 4.7,
       duration: "5-8 days",
       groupSize: "2-18 people",
-      price: "From $949",
       image: seoulImage,
       description: "K-pop culture meets ancient traditions in South Korea's high-tech capital.",
       highlights: ["Gyeongbokgung Palace", "Myeongdong", "Gangnam District", "Korean BBQ"]
@@ -311,7 +307,6 @@ const Destinations = () => {
       rating: 4.5,
       duration: "6-10 days",
       groupSize: "2-20 people",
-      price: "From $649",
       image: mumbaiImage,
       description: "Bollywood's home city offers incredible diversity, street food, and colonial architecture.",
       highlights: ["Gateway of India", "Bollywood Studios", "Crawford Market", "Marine Drive"]
@@ -323,7 +318,6 @@ const Destinations = () => {
       rating: 4.7,
       duration: "5-8 days",
       groupSize: "2-16 people",
-      price: "From $749",
       image: marrakechImage,
       description: "Imperial city with vibrant souks, stunning palaces, and Saharan gateway.",
       highlights: ["Jemaa el-Fnaa", "Majorelle Garden", "Bahia Palace", "Atlas Mountains"]
