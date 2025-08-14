@@ -153,7 +153,7 @@ const Destinations = () => {
       rating: 4.9,
       duration: "5-7 days",
       groupSize: "2-10 people",
-        image: santoriniImage,
+      image: santoriniImage,
       description: "Breathtaking sunsets and white-washed buildings overlooking the Aegean Sea.",
       highlights: ["Sunset in Oia", "Wine Tasting", "Volcanic Beaches", "Cycladic Architecture"]
     },
@@ -197,7 +197,6 @@ const Destinations = () => {
       rating: 4.6,
       duration: "3-6 days",
       groupSize: "2-16 people",
-      price: "From $699",
       image: amsterdamImage,
       description: "Charming canals, world-class museums, and liberal culture in this picturesque city.",
       highlights: ["Anne Frank House", "Van Gogh Museum", "Canal Cruise", "Jordaan District"]
@@ -209,7 +208,6 @@ const Destinations = () => {
       rating: 4.8,
       duration: "4-6 days",
       groupSize: "2-20 people",
-      price: "From $599",
       image: pragueImage,
       description: "Medieval charm and stunning architecture make this one of Europe's most beautiful cities.",
       highlights: ["Charles Bridge", "Prague Castle", "Old Town Square", "Astronomical Clock"]
@@ -221,7 +219,6 @@ const Destinations = () => {
       rating: 4.7,
       duration: "4-7 days",
       groupSize: "2-18 people",
-      price: "From $799",
       image: viennaImage,
       description: "Imperial grandeur and classical music heritage in Austria's elegant capital.",
       highlights: ["Schönbrunn Palace", "St. Stephen's Cathedral", "Belvedere Palace", "Vienna Opera"]
@@ -233,7 +230,6 @@ const Destinations = () => {
       rating: 4.6,
       duration: "3-6 days",
       groupSize: "2-12 people",
-      price: "From $1,299",
       image: zurichImage,
       description: "Alpine beauty meets luxury living in Switzerland's financial capital.",
       highlights: ["Lake Zurich", "Swiss Alps", "Old Town", "Luxury Shopping"]
@@ -245,7 +241,6 @@ const Destinations = () => {
       rating: 4.7,
       duration: "4-7 days",
       groupSize: "2-16 people",
-      price: "From $899",
       image: stockholmImage,
       description: "Scandinavian design and medieval charm spread across 14 islands.",
       highlights: ["Gamla Stan", "Vasa Museum", "ABBA Museum", "Archipelago Tour"]
@@ -257,7 +252,6 @@ const Destinations = () => {
       rating: 4.8,
       duration: "5-8 days",
       groupSize: "2-14 people",
-      price: "From $1,199",
       image: reykjavikImage,
       description: "Gateway to otherworldly landscapes with geysers, glaciers, and Northern Lights.",
       highlights: ["Blue Lagoon", "Northern Lights", "Golden Circle", "Geysir"]
