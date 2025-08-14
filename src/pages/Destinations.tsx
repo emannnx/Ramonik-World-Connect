@@ -87,7 +87,6 @@ const Destinations = () => {
       rating: 4.9,
       duration: "5-7 days",
       groupSize: "2-20 people",
-      price: "From $899",
       image: parisImage,
       description: "The City of Light awaits with its iconic landmarks, world-class cuisine, and romantic atmosphere.",
       highlights: ["Eiffel Tower", "Louvre Museum", "Seine River Cruise", "Montmartre District"]
@@ -99,7 +98,6 @@ const Destinations = () => {
       rating: 4.8,
       duration: "4-6 days",
       groupSize: "1-15 people",
-      price: "From $1,299",
       image: dubaiImage,
       description: "Experience luxury and modern marvels in this desert oasis with stunning architecture.",
       highlights: ["Burj Khalifa", "Desert Safari", "Gold Souk", "Luxury Shopping"]
