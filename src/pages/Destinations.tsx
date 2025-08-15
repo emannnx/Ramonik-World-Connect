@@ -561,7 +561,6 @@ const Destinations = () => {
       rating: 4.6,
       duration: "6-10 days",
       groupSize: "2-14 people",
-      price: "From $1,299",
       image: barbadosImage,
       description: "Caribbean gem with rum heritage, beautiful beaches, and friendly locals.",
       highlights: ["Harrison's Cave", "Rum Distilleries", "Crane Beach", "Bridgetown"]
@@ -573,7 +572,6 @@ const Destinations = () => {
       rating: 4.5,
       duration: "6-10 days",
       groupSize: "2-16 people",
-      price: "From $999",
       image: jamaicaImage,
       description: "Reggae birthplace with Blue Mountains, jerk cuisine, and laid-back vibes.",
       highlights: ["Blue Mountains", "Dunn's River Falls", "Bob Marley Museum", "Negril Beach"]
@@ -585,7 +583,6 @@ const Destinations = () => {
       rating: 4.6,
       duration: "6-10 days",
       groupSize: "2-18 people",
-      price: "From $799",
       image: phuketImage,
       description: "Thai island paradise with limestone cliffs, beach parties, and cultural sites.",
       highlights: ["Phi Phi Islands", "Big Buddha", "Patong Beach", "Island Hopping"]
@@ -597,7 +594,6 @@ const Destinations = () => {
       rating: 4.5,
       duration: "5-9 days",
       groupSize: "2-16 people",
-      price: "From $699",
       image: langkawiImage,
       description: "Duty-free island with pristine beaches, cable car rides, and mangrove forests.",
       highlights: ["Sky Bridge", "Cable Car", "Underwater World", "Kilim Karst Geoforest"]
@@ -609,7 +605,6 @@ const Destinations = () => {
       rating: 4.7,
       duration: "5-8 days",
       groupSize: "2-20 people",
-      price: "From $749",
       image: istanbulImage,
       description: "Where Europe meets Asia with Byzantine history, Ottoman architecture, and vibrant bazaars.",
       highlights: ["Hagia Sophia", "Blue Mosque", "Grand Bazaar", "Bosphorus Cruise"]
@@ -621,7 +616,6 @@ const Destinations = () => {
       rating: 4.6,
       duration: "5-8 days",
       groupSize: "2-18 people",
-      price: "From $899",
       image: jerusalemImage,
       description: "Holy city sacred to three religions with ancient history and spiritual significance.",
       highlights: ["Western Wall", "Church of Holy Sepulchre", "Via Dolorosa", "Dome of Rock"]
@@ -633,7 +627,6 @@ const Destinations = () => {
       rating: 4.8,
       duration: "4-7 days",
       groupSize: "2-16 people",
-      price: "From $999",
       image: petraImage,
       description: "Ancient Nabataean city carved into rose-red cliffs, one of the New Seven Wonders.",
       highlights: ["Treasury", "Monastery", "Siq Canyon", "Royal Tombs"]
@@ -645,7 +638,6 @@ const Destinations = () => {
       rating: 4.5,
       duration: "3-6 days",
       groupSize: "2-14 people",
-      price: "From $1,199",
       image: dohaImage,
       description: "Modern Arabian city with futuristic architecture, luxury shopping, and cultural heritage.",
       highlights: ["Museum of Islamic Art", "Souq Waqif", "The Pearl", "Katara Cultural Village"]
@@ -657,7 +649,6 @@ const Destinations = () => {
       rating: 4.6,
       duration: "4-7 days",
       groupSize: "2-16 people",
-      price: "From $1,299",
       image: abudhabiImage,
       description: "Capital of UAE with grand mosques, cultural institutions, and luxury experiences.",
       highlights: ["Sheikh Zayed Mosque", "Louvre Abu Dhabi", "Emirates Palace", "Yas Island"]
@@ -669,7 +660,6 @@ const Destinations = () => {
       rating: 4.3,
       duration: "4-7 days",
       groupSize: "2-16 people",
-      price: "From $899",
       image: riyadhImage,
       description: "Modern Saudi capital blending traditional heritage with futuristic developments.",
       highlights: ["Kingdom Centre", "Diriyah", "National Museum", "Edge of the World"]
@@ -681,7 +671,6 @@ const Destinations = () => {
       rating: 4.5,
       duration: "4-7 days",
       groupSize: "2-14 people",
-      price: "From $799",
       image: muscatImage,
       description: "Sultanate capital with stunning mosques, traditional souks, and dramatic mountains.",
       highlights: ["Sultan Qaboos Mosque", "Royal Opera House", "Mutrah Souq", "Nizwa Fort"]
@@ -693,7 +682,6 @@ const Destinations = () => {
       rating: 4.4,
       duration: "4-7 days",
       groupSize: "2-18 people",
-      price: "From $699",
       image: casablancaImage,
       description: "Morocco's economic capital with art deco architecture and the world's largest mosque.",
       highlights: ["Hassan II Mosque", "Old Medina", "Corniche", "Art Deco Buildings"]
@@ -705,7 +693,6 @@ const Destinations = () => {
       rating: 4.3,
       duration: "4-7 days",
       groupSize: "2-16 people",
-      price: "From $599",
       image: tunisImage,
       description: "North African capital with ancient Carthage ruins and charming medina.",
       highlights: ["Carthage Ruins", "Sidi Bou Said", "Medina of Tunis", "Bardo Museum"]
