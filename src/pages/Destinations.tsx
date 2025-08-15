@@ -450,7 +450,6 @@ const Destinations = () => {
       rating: 4.4,
       duration: "3-6 days",
       groupSize: "2-20 people",
-      price: "From $699",
       image: lasvegasImage,
       description: "Entertainment capital with world-class shows, casinos, and desert adventures.",
       highlights: ["The Strip", "Bellagio Fountains", "Grand Canyon", "Cirque du Soleil"]
@@ -462,7 +461,6 @@ const Destinations = () => {
       rating: 4.6,
       duration: "4-7 days",
       groupSize: "2-18 people",
-      price: "From $899",
       image: miamiImage,
       description: "Art Deco paradise with beautiful beaches, vibrant nightlife, and Latin culture.",
       highlights: ["South Beach", "Art Deco District", "Little Havana", "Wynwood Walls"]
@@ -474,7 +472,6 @@ const Destinations = () => {
       rating: 4.7,
       duration: "4-7 days",
       groupSize: "2-18 people",
-      price: "From $1,199",
       image: sanfranciscoImage,
       description: "Iconic city with Golden Gate Bridge, cable cars, and tech innovation.",
       highlights: ["Golden Gate Bridge", "Alcatraz", "Fisherman's Wharf", "Lombard Street"]
@@ -486,7 +483,6 @@ const Destinations = () => {
       rating: 4.6,
       duration: "4-7 days",
       groupSize: "2-20 people",
-      price: "From $799",
       image: chicagoImage,
       description: "Architectural marvels, deep-dish pizza, and blues music in the Windy City.",
       highlights: ["Millennium Park", "Navy Pier", "Art Institute", "Architecture Tour"]
@@ -498,7 +494,6 @@ const Destinations = () => {
       rating: 4.5,
       duration: "3-6 days",
       groupSize: "2-20 people",
-      price: "From $749",
       image: washingtondcImage,
       description: "Political heart of America with world-class museums and monuments.",
       highlights: ["Smithsonian Museums", "Lincoln Memorial", "Capitol Building", "Cherry Blossoms"]
@@ -510,7 +505,6 @@ const Destinations = () => {
       rating: 4.9,
       duration: "7-14 days",
       groupSize: "2-8 people",
-      price: "From $2,499",
       image: maldivesImage,
       description: "Ultimate tropical paradise with overwater villas and pristine coral reefs.",
       highlights: ["Overwater Bungalows", "Snorkeling", "Spa Treatments", "Private Islands"]
@@ -534,7 +528,6 @@ const Destinations = () => {
       rating: 4.7,
       duration: "7-14 days",
       groupSize: "2-12 people",
-      price: "From $1,799",
       image: fijiImage,
       description: "Friendly islands with crystal-clear waters, coral reefs, and traditional Bula spirit.",
       highlights: ["Coral Coast", "Kava Ceremony", "Island Hopping", "Scuba Diving"]
@@ -546,7 +539,6 @@ const Destinations = () => {
       rating: 4.8,
       duration: "7-12 days",
       groupSize: "2-16 people",
-      price: "From $1,599",
       image: hawaiiImage,
       description: "Volcanic islands with diverse landscapes, surfing culture, and aloha spirit.",
       highlights: ["Pearl Harbor", "Diamond Head", "Road to Hana", "Volcano National Park"]
@@ -558,7 +550,6 @@ const Destinations = () => {
       rating: 4.8,
       duration: "8-14 days",
       groupSize: "2-10 people",
-      price: "From $2,299",
       image: tahitiImage,
       description: "Romantic paradise with overwater bungalows and dramatic volcanic peaks.",
       highlights: ["Bora Bora", "Moorea", "Lagoon Tours", "Polynesian Culture"]
