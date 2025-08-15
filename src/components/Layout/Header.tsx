@@ -35,15 +35,15 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-4">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-travel-blue ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                   isActiveLink(item.path)
-                    ? "text-travel-blue border-b-2 border-travel-blue pb-1"
-                    : "text-foreground"
+                    ? "bg-travel-blue text-white shadow-md"
+                    : "text-foreground hover:bg-gray-100"
                 }`}
               >
                 {item.name}
@@ -89,8 +89,10 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-travel-blue ${
-                  isActiveLink(item.path) ? "text-travel-blue" : "text-foreground"
+                className={`px-4 py-2 rounded-lg text-base font-medium transition-all duration-300 ${
+                  isActiveLink(item.path)
+                    ? "bg-travel-blue text-white shadow-md"
+                    : "text-foreground hover:bg-gray-100"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
