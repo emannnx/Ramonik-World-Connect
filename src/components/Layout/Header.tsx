@@ -60,9 +60,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden transform transition-transform duration-300 ${
-              isMenuOpen ? "rotate-90" : ""
-            }`}
+            className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
@@ -72,60 +70,38 @@ const Header = () => {
             )}
           </button>
         </div>
-      </div>
 
-      {/* Background Overlay */}
-      <div
-        className={`fixed inset-0 bg-black/40 transition-opacity duration-300 md:hidden ${
-          isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
-        onClick={() => setIsMenuOpen(false)}
-      ></div>
+        {/* Mobile Navigation */}
+        <div
+          className={`md:hidden fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-40 ${
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className="flex justify-between items-center p-4 border-b">
+            <h2 className="text-lg font-semibold text-travel-blue">Menu</h2>
+            <button onClick={() => setIsMenuOpen(false)}>
+              <X className="h-6 w-6 text-travel-blue" />
+            </button>
+          </div>
 
-      {/* Mobile Navigation Drawer */}
-      <div
-        className={`md:hidden fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-all duration-300 ease-in-out z-50 ${
-          isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
-        }`}
-      >
-        <div className="flex justify-between items-center p-4 border-b">
-          <h2 className="text-lg font-semibold text-travel-blue">Menu</h2>
-          <button onClick={() => setIsMenuOpen(false)}>
-            <X className="h-6 w-6 text-travel-blue" />
-          </button>
+          <nav className="flex flex-col space-y-3 p-4">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                className={`text-sm font-medium transition-colors hover:text-travel-blue ${
+                  isActiveLink(item.path) ? "text-travel-blue" : "text-foreground"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <Button variant="travel" size="sm" className="w-fit mt-4">
+              Book Now
+            </Button>
+          </nav>
         </div>
-
-        <nav className="flex flex-col space-y-3 p-4">
-          {navItems.map((item, index) => (
-            <Link
-              key={item.name}
-              to={item.path}
-              className={`text-sm font-medium transition-colors hover:text-travel-blue transform transition-all duration-300 ${
-                isActiveLink(item.path) ? "text-travel-blue" : "text-foreground"
-              }`}
-              style={{
-                transitionDelay: `${index * 50}ms`,
-                transform: isMenuOpen ? "translateX(0)" : "translateX(20px)",
-                opacity: isMenuOpen ? 1 : 0,
-              }}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {item.name}
-            </Link>
-          ))}
-          <Button
-            variant="travel"
-            size="sm"
-            className="w-fit mt-4 transform transition-all duration-300"
-            style={{
-              transitionDelay: `${navItems.length * 50}ms`,
-              transform: isMenuOpen ? "translateX(0)" : "translateX(20px)",
-              opacity: isMenuOpen ? 1 : 0,
-            }}
-          >
-            Book Now
-          </Button>
-        </nav>
       </div>
     </header>
   );
