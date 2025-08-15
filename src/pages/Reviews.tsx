@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Star, Quote, Plus } from "lucide-react";
+import { Star, Quote, Plus, Trash } from "lucide-react";
 import { useState, useEffect } from "react";
 
 interface Review {
@@ -32,7 +32,11 @@ const Reviews = () => {
     try {
       const storedReviews = localStorage.getItem("reviews");
       if (storedReviews) {
-        setReviews(JSON.parse(storedReviews));
+        const parsed = JSON.parse(storedReviews) as Review[];
+        parsed.sort(
+          (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+        );
+        setReviews(parsed);
       }
       setLoading(false);
     } catch (error) {
@@ -41,7 +45,7 @@ const Reviews = () => {
     }
   };
 
-  // Submit new review and save to localStorage
+  // Submit new review
   const handleSubmitReview = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -63,17 +67,22 @@ const Reviews = () => {
 
       const updatedReviews = [newReview, ...reviews];
       setReviews(updatedReviews);
-
-      // Save to localStorage
       localStorage.setItem("reviews", JSON.stringify(updatedReviews));
 
-      // Reset form
       setFormData({ name: "", rating: 0, review: "" });
       setShowAddForm(false);
     } catch (error) {
       console.error("Error submitting review:", error);
     } finally {
       setSubmitting(false);
+    }
+  };
+
+  // Clear all reviews
+  const handleClearReviews = () => {
+    if (window.confirm("Are you sure you want to delete all reviews?")) {
+      localStorage.removeItem("reviews");
+      setReviews([]);
     }
   };
 
@@ -93,21 +102,23 @@ const Reviews = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-travel-blue to-travel-blue text-white py-20">
+      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20 shadow-lg">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Customer Reviews</h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-90 mb-8">
-            See what our travelers say about their experiences with Ramonik Travel & Tours
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
+            Customer Reviews
+          </h1>
+          <p className="text-lg md:text-xl max-w-3xl mx-auto opacity-90 mb-8">
+            Real stories from our happy travelers. Share yours and inspire the next journey!
           </p>
           <Button
             onClick={() => setShowAddForm(true)}
-            variant="outline"
+            variant="secondary"
             size="lg"
-            className="bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm"
+            className="bg-yellow-400 text-black hover:bg-yellow-300 font-semibold"
           >
             <Plus className="mr-2 h-5 w-5" />
             Add Review
@@ -116,62 +127,72 @@ const Reviews = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white shadow-inner">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-travel-blue mb-2">4.9</div>
+              <div className="text-4xl font-bold text-blue-700 mb-2">4.9</div>
               <div className="flex justify-center mb-2">{renderStars(5)}</div>
-              <div className="text-muted-foreground">Average Rating</div>
+              <div className="text-gray-500">Average Rating</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-travel-blue mb-2">
-                {reviews.length}+
-              </div>
-              <div className="text-muted-foreground">Total Reviews</div>
+              <div className="text-4xl font-bold text-blue-700 mb-2">{reviews.length}+</div>
+              <div className="text-gray-500">Total Reviews</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-travel-blue mb-2">98%</div>
-              <div className="text-muted-foreground">Satisfaction Rate</div>
+              <div className="text-4xl font-bold text-blue-700 mb-2">98%</div>
+              <div className="text-gray-500">Satisfaction Rate</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-travel-blue mb-2">95%</div>
-              <div className="text-muted-foreground">Repeat Customers</div>
+              <div className="text-4xl font-bold text-blue-700 mb-2">95%</div>
+              <div className="text-gray-500">Repeat Customers</div>
             </div>
           </div>
+
+          {reviews.length > 0 && (
+            <div className="mt-6 flex justify-center">
+              <Button
+                variant="destructive"
+                size="sm"
+                onClick={handleClearReviews}
+                className="flex items-center gap-2"
+              >
+                <Trash className="w-4 h-4" /> Clear All Reviews
+              </Button>
+            </div>
+          )}
         </div>
       </section>
 
       {/* Reviews Grid */}
-      <section className="py-20 bg-gradient-to-b from-travel-light-blue to-white">
+      <section className="py-16 flex-grow">
         <div className="container mx-auto px-4">
           {loading ? (
-            <div className="text-center">
-              <div className="text-xl text-muted-foreground">Loading reviews...</div>
+            <div className="text-center text-gray-500 text-lg">Loading reviews...</div>
+          ) : reviews.length === 0 ? (
+            <div className="text-center text-gray-500 text-lg italic">
+              No reviews yet. Be the first to share your experience!
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {reviews.map((review) => (
                 <Card
                   key={review.id}
-                  className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative"
+                  className="group shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white rounded-xl overflow-hidden"
                 >
                   <CardContent className="p-6">
-                    <div className="absolute top-4 right-4 text-travel-blue/20">
+                    <div className="absolute top-4 right-4 text-blue-100">
                       <Quote className="h-8 w-8" />
                     </div>
-
-                    <div className="flex items-center space-x-2 mb-4">
+                    <div className="flex items-center space-x-2 mb-3">
                       {renderStars(review.rating)}
                     </div>
-
-                    <p className="text-muted-foreground mb-4 italic leading-relaxed">
+                    <p className="text-gray-600 mb-4 italic leading-relaxed">
                       "{review.review}"
                     </p>
-
-                    <div className="border-t pt-4">
-                      <div className="font-semibold text-travel-blue">{review.name}</div>
-                      <div className="text-xs text-muted-foreground mt-1">
+                    <div className="border-t pt-3">
+                      <div className="font-semibold text-blue-700">{review.name}</div>
+                      <div className="text-xs text-gray-400 mt-1">
                         {new Date(review.created_at).toLocaleDateString()}
                       </div>
                     </div>
@@ -186,17 +207,15 @@ const Reviews = () => {
       {/* Add Review Modal */}
       {showAddForm && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+          <div className="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <div className="p-6 border-b">
-              <h2 className="text-2xl font-bold text-travel-blue">Add Your Review</h2>
-              <p className="text-muted-foreground mt-2">
-                Share your experience with Ramonik Travel & Tours
-              </p>
+              <h2 className="text-2xl font-bold text-blue-700">Add Your Review</h2>
+              <p className="text-gray-500 mt-1">We value your feedback!</p>
             </div>
 
             <form onSubmit={handleSubmitReview} className="p-6 space-y-6">
               <div>
-                <label className="block text-sm font-medium text-travel-blue mb-2">
+                <label className="block text-sm font-medium text-blue-700 mb-2">
                   Your Name *
                 </label>
                 <Input
@@ -211,7 +230,7 @@ const Reviews = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-travel-blue mb-2">
+                <label className="block text-sm font-medium text-blue-700 mb-2">
                   Rating *
                 </label>
                 <div className="flex space-x-1">
@@ -237,7 +256,7 @@ const Reviews = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-travel-blue mb-2">
+                <label className="block text-sm font-medium text-blue-700 mb-2">
                   Your Review *
                 </label>
                 <Textarea
@@ -246,7 +265,7 @@ const Reviews = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, review: e.target.value })
                   }
-                  placeholder="Tell us about your experience with Ramonik Travel & Tours..."
+                  placeholder="Tell us about your experience..."
                   required
                 />
               </div>
@@ -260,7 +279,11 @@ const Reviews = () => {
                 >
                   Cancel
                 </Button>
-                <Button type="submit" variant="travel" disabled={submitting}>
+                <Button
+                  type="submit"
+                  className="bg-blue-700 text-white hover:bg-blue-600"
+                  disabled={submitting}
+                >
                   {submitting ? "Submitting..." : "Submit Review"}
                 </Button>
               </div>
