@@ -792,7 +792,6 @@ const Destinations = () => {
       rating: 4.6,
       duration: "4-7 days",
       groupSize: "2-16 people",
-      price: "From $1,199",
       image: osloImage,
       description: "Scandinavian capital with fjords, modern architecture, and Viking heritage.",
       highlights: ["Opera House", "Viking Ship Museum", "Vigeland Park", "Fjord Tours"]
@@ -804,7 +803,6 @@ const Destinations = () => {
       rating: 4.7,
       duration: "4-7 days",
       groupSize: "2-18 people",
-      price: "From $999",
       image: copenhagenImage,
       description: "Danish capital with hygge culture, colorful harbors, and world-class dining.",
       highlights: ["Nyhavn", "Tivoli Gardens", "Little Mermaid", "Christiania"]
@@ -816,7 +814,6 @@ const Destinations = () => {
       rating: 4.5,
       duration: "3-6 days",
       groupSize: "2-16 people",
-      price: "From $899",
       image: helsinkiImage,
       description: "Nordic design capital with saunas, archipelago, and modern Finnish culture.",
       highlights: ["Senate Square", "Temppeliaukio Church", "Suomenlinna", "Design District"]
