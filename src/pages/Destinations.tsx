@@ -704,7 +704,6 @@ const Destinations = () => {
       rating: 4.4,
       duration: "5-8 days",
       groupSize: "2-16 people",
-      price: "From $749",
       image: addisababaImage,
       description: "African Union headquarters with ancient churches, coffee culture, and highland beauty.",
       highlights: ["Holy Trinity Cathedral", "Merkato Market", "National Museum", "Coffee Ceremony"]
@@ -716,7 +715,6 @@ const Destinations = () => {
       rating: 4.5,
       duration: "5-8 days",
       groupSize: "2-18 people",
-      price: "From $799",
       image: johannesburgImage,
       description: "City of Gold with apartheid history, vibrant townships, and nearby wildlife.",
       highlights: ["Apartheid Museum", "Soweto", "Gold Reef City", "Lion & Safari Park"]
@@ -728,7 +726,6 @@ const Destinations = () => {
       rating: 4.7,
       duration: "6-10 days",
       groupSize: "2-14 people",
-      price: "From $899",
       image: zanzibarImage,
       description: "Spice island with Stone Town heritage, pristine beaches, and Swahili culture.",
       highlights: ["Stone Town", "Spice Tours", "Prison Island", "Jozani Forest"]
