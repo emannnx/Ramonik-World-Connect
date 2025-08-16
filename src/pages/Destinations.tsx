@@ -737,7 +737,6 @@ const Destinations = () => {
       rating: 4.9,
       duration: "4-7 days",
       groupSize: "2-16 people",
-      price: "From $1,099",
       image: victoriafallsImage,
       description: "One of the world's largest waterfalls with adventure activities and wildlife.",
       highlights: ["Victoria Falls", "Devil's Pool", "Bungee Jumping", "Zambezi River"]
@@ -749,7 +748,6 @@ const Destinations = () => {
       rating: 4.9,
       duration: "6-9 days",
       groupSize: "2-14 people",
-      price: "From $1,299",
       image: machupicchu,
       description: "Ancient Inca citadel high in the Andes, one of the New Seven Wonders of the World.",
       highlights: ["Inca Trail", "Sacred Valley", "Huayna Picchu", "Cusco"]
@@ -761,7 +759,6 @@ const Destinations = () => {
       rating: 4.6,
       duration: "5-8 days",
       groupSize: "2-16 people",
-      price: "From $849",
       image: cuscoImage,
       description: "Former Inca capital with colonial architecture and gateway to Machu Picchu.",
       highlights: ["San Pedro Market", "Qorikancha", "Sacred Valley", "Inca Ruins"]
@@ -773,7 +770,6 @@ const Destinations = () => {
       rating: 4.7,
       duration: "4-7 days",
       groupSize: "2-16 people",
-      price: "From $699",
       image: cartagenaImage,
       description: "Colonial jewel with colorful architecture, Caribbean beaches, and vibrant culture.",
       highlights: ["Old Town", "Castillo San Felipe", "Rosario Islands", "Getsemani"]
@@ -785,7 +781,6 @@ const Destinations = () => {
       rating: 4.5,
       duration: "4-7 days",
       groupSize: "2-18 people",
-      price: "From $799",
       image: santiagoImage,
       description: "Modern capital nestled in the Andes with wine regions and Pacific coast access.",
       highlights: ["Cerro San Cristóbal", "La Moneda", "Wine Valleys", "Valparaíso"]
