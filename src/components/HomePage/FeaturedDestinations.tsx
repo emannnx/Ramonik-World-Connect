@@ -13,14 +13,12 @@ const FeaturedDestinations = () => {
       name: "Paris, France",
       image: parisImage,
       rating: 4.9,
-      price: "From $899",
       description: "The City of Light awaits with its iconic landmarks and romantic atmosphere."
     },
     {
       name: "Dubai, UAE",
       image: dubaiImage,
       rating: 4.8,
-      price: "From $1,299",
       description: "Experience luxury and modern marvels in this desert oasis."
     },
     {
