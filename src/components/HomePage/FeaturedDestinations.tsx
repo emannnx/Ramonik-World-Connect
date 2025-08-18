@@ -25,14 +25,12 @@ const FeaturedDestinations = () => {
       name: "London, England",
       image: londonImage,
       rating: 4.7,
-      price: "From $799",
       description: "Discover history, culture, and royal heritage in Britain's capital."
     },
     {
       name: "Cape Town, South Africa",
       image: capetownImage,
       rating: 4.9,
-      price: "From $1,099",
       description: "Stunning landscapes and vibrant culture at the tip of Africa."
     }
   ];
