@@ -47,7 +47,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-travel-blue text-white py-20 bg-cover bg-center"
       style={{
-        backgroundImage: `url(${AboutPlane})`, backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat",
+        backgroundImage: `url(https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ivSmo8DuZ97g/v2/-1x-1.webp)`, backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat",
       }}>
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">About Ramonik Travel & Tours</h1>
