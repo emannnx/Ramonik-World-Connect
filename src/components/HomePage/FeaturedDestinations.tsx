@@ -70,7 +70,7 @@ const FeaturedDestinations = () => {
                 </div>
                 <p className="text-muted-foreground text-sm mb-4">{destination.description}</p>
                 <div className="flex items-center justify-between">
-                  <Button onClick={() => window.open('https://wa.me/16677700580')}  variant="outline" size="sm">
+                  <Button onClick={() => window.open('https://wa.me/16677700580')}  variant="outline" size="sm" >
                     Learn More
                   </Button>
                 </div>
