@@ -22,8 +22,9 @@ const HeroSection = () => {
           <h1 className="text-5xl md:text-7xl font-bold leading-tight relative inline-block overflow-hidden">
             <motion.span
               initial={{ clipPath: "inset(0 100% 0 0)" }}
-              animate={{ clipPath: "inset(0 0% 0 0)" }}
-              transition={{ duration: 2, ease: "easeInOut" }}
+              whileInView={{ clipPath: "inset(0 0% 0 0)" }}
+              viewport={{ once: false }}
+              transition={{ duration: 1.4, ease: "easeInOut" }}
               className="inline-block"
             >
               We Connect You to the
@@ -35,8 +36,9 @@ const HeroSection = () => {
             {/* Airplane Animation */}
             <motion.div
               initial={{ x: "-120%" }}
-              animate={{ x: "140%" }}
-              transition={{ duration: 2, ease: "easeInOut" }}
+              whileInView={{ x: "140%" }}
+              viewport={{ once: false }}
+              transition={{ duration: 1.4, ease: "easeInOut" }}
               className="absolute top-1/2 left-0"
             >
               <Plane className="text-travel-gold w-8 h-8 rotate-45" />
@@ -46,8 +48,9 @@ const HeroSection = () => {
           {/* Subtext */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.2, duration: 0.8, ease: "easeOut" }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
             className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto"
           >
             Discover amazing destinations with Ramonik Travel & Tours. 
@@ -58,11 +61,12 @@ const HeroSection = () => {
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: false }}
             variants={{
               hidden: {},
               visible: {
-                transition: { staggerChildren: 0.3, delayChildren: 2.5 }
+                transition: { staggerChildren: 0.2, delayChildren: 0.5 }
               }
             }}
           >
@@ -71,6 +75,7 @@ const HeroSection = () => {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 }
               }}
+              transition={{ duration: 0.5 }}
             >
               <Button
                 onClick={() => window.open("https://wa.me/16677700580")}
@@ -87,6 +92,7 @@ const HeroSection = () => {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 }
               }}
+              transition={{ duration: 0.5 }}
             >
               <Link to="/destinations">
                 <Button
@@ -106,11 +112,12 @@ const HeroSection = () => {
           <motion.div
             className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto"
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: false }}
             variants={{
               hidden: {},
               visible: {
-                transition: { staggerChildren: 0.2, delayChildren: 3.2 }
+                transition: { staggerChildren: 0.15, delayChildren: 0.6 }
               }
             }}
           >
@@ -126,6 +133,7 @@ const HeroSection = () => {
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0 }
                 }}
+                transition={{ duration: 0.5 }}
                 className="text-center"
               >
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-2">
