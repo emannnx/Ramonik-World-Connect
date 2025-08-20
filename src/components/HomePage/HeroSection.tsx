@@ -34,12 +34,16 @@ const HeroSection = () => {
               Plan Your Trip
             </Button>
             <Link to="/destinations">
-      <Button
-        size="lg"
-        className="text-lg px-8 py-4 border-white text-blue hover:bg-blue hover:text-travel-white"
-      >
-        View Destinations
-      </Button>
+    <Button
+  size="lg"
+  className="text-lg px-8 py-4 border border-white text-blue bg-transparent 
+             hover:bg-blue hover:text-travel-white hover:scale-105 
+             hover:shadow-lg hover:shadow-blue/50 
+             transition-all duration-300 ease-in-out rounded-2xl"
+>
+  View Destinations
+</Button>
+
     </Link>
           </div>
 
