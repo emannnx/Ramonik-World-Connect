@@ -17,10 +17,9 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto space-y-6">
           {/* Animated Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight relative inline-block overflow-hidden">
-            {/* Text Reveal */}
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight relative inline-block overflow-hidden">
             <motion.span
               initial={{ clipPath: "inset(0 100% 0 0)" }}
               animate={{ clipPath: "inset(0 0% 0 0)" }}
@@ -44,68 +43,99 @@ const HeroSection = () => {
             </motion.div>
           </h1>
 
-          <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto">
+          {/* Subtext */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2.2, duration: 0.8, ease: "easeOut" }}
+            className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto"
+          >
             Discover amazing destinations with Ramonik Travel & Tours. 
             Your journey to unforgettable experiences starts here.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button
-              onClick={() => window.open("https://wa.me/16677700580")}
-              variant="hero"
-              size="lg"
-              className="text-lg px-8 py-4"
+          {/* Buttons */}
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.3, delayChildren: 2.5 }
+              }
+            }}
+          >
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
             >
-              Plan Your Trip
-            </Button>
-
-            <Link to="/destinations">
               <Button
+                onClick={() => window.open("https://wa.me/16677700580")}
+                variant="hero"
                 size="lg"
-                className="text-lg px-8 py-4 border border-white text-blue bg-transparent 
-                           hover:bg-blue hover:text-travel-white hover:scale-105 
-                           hover:shadow-lg hover:shadow-blue/50 
-                           transition-all duration-300 ease-in-out rounded-2xl"
+                className="text-lg px-8 py-4"
               >
-                View Destinations
+                Plan Your Trip
               </Button>
-            </Link>
-          </div>
+            </motion.div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-            <div className="text-center">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-2">
-                <Users className="h-8 w-8 mx-auto text-travel-gold" />
-              </div>
-              <div className="text-2xl font-bold">10K+</div>
-              <div className="text-sm text-white/80">Happy Travelers</div>
-            </div>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 }
+              }}
+            >
+              <Link to="/destinations">
+                <Button
+                  size="lg"
+                  className="text-lg px-8 py-4 border border-white text-blue bg-transparent 
+                             hover:bg-blue hover:text-travel-white hover:scale-105 
+                             hover:shadow-lg hover:shadow-blue/50 
+                             transition-all duration-300 ease-in-out rounded-2xl"
+                >
+                  View Destinations
+                </Button>
+              </Link>
+            </motion.div>
+          </motion.div>
 
-            <div className="text-center">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-2">
-                <MapPin className="h-8 w-8 mx-auto text-travel-gold" />
-              </div>
-              <div className="text-2xl font-bold">150+</div>
-              <div className="text-sm text-white/80">Destinations</div>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-2">
-                <Award className="h-8 w-8 mx-auto text-travel-gold" />
-              </div>
-              <div className="text-2xl font-bold">15+</div>
-              <div className="text-sm text-white/80">Years Experience</div>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-2">
-                <Heart className="h-8 w-8 mx-auto text-travel-gold" />
-              </div>
-              <div className="text-2xl font-bold">98%</div>
-              <div className="text-sm text-white/80">Satisfaction Rate</div>
-            </div>
-          </div>
+          {/* Stats (staggered reveal) */}
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.2, delayChildren: 3.2 }
+              }
+            }}
+          >
+            {[
+              { icon: Users, value: "10K+", label: "Happy Travelers" },
+              { icon: MapPin, value: "150+", label: "Destinations" },
+              { icon: Award, value: "15+", label: "Years Experience" },
+              { icon: Heart, value: "98%", label: "Satisfaction Rate" },
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 }
+                }}
+                className="text-center"
+              >
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-2">
+                  <stat.icon className="h-8 w-8 mx-auto text-travel-gold" />
+                </div>
+                <div className="text-2xl font-bold">{stat.value}</div>
+                <div className="text-sm text-white/80">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
