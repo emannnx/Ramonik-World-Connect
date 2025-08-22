@@ -223,7 +223,7 @@ const About = () => {
               <p>
                 From the moment you contact us to the time you return home,
                 we're with you every step of the way, ensuring your journey is
-                smooth, safe, and spectacular.
+                smooth, safe, and spectacular..
               </p>
             </motion.div>
           </div>
