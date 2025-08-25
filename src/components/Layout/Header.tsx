@@ -86,7 +86,7 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.7, duration: 0.6, ease: "easeOut" }}
           >
-            <Button variant="travel" size="sm">
+            <Button variant="travel" size="sm"  onClick={() => window.open('mailto:ramoniktravels@gmail.com')} >
               Book Now
             </Button>
           </motion.div>
