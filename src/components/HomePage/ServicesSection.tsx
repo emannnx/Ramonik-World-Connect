@@ -52,11 +52,6 @@ const ServicesSection = () => {
       description: "Get expert help with visa applications and documentation for hassle-free travel."
     },
     {
-      icon: CreditCard,
-      title: "Passport Processing & Renewal",
-      description: "Streamlined passport services to ensure you're ready for international travel."
-    },
-    {
       icon: User,
       title: "National ID Card",
       description: "Assistance with national ID card applications and renewals."
