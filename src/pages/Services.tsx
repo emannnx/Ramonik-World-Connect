@@ -64,12 +64,6 @@ const Services = () => {
       features: ["Document preparation", "Application tracking", "Expert consultation", "Fast-track processing"]
     },
     {
-      icon: CreditCard,
-      title: "Passport Processing & Renewal",
-      description: "Streamlined passport services to ensure you're ready for international travel with expedited options available.",
-      features: ["New passport applications", "Renewal services", "Expedited processing", "Document verification"]
-    },
-    {
       icon: User,
       title: "National ID Card",
       description: "Assistance with national ID card applications and renewals with proper documentation guidance.",
