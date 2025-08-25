@@ -16,14 +16,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "info@ramoniktravels.com",
+      content: "ramoniktravels@gmail.com",
       description: "Primary contact for all inquiries"
-    },
-    {
-      icon: Mail,
-      title: "Alternative Email",
-      content: "ramonikcollections@gmail.com",
-      description: "Secondary contact option"
     },
     {
       icon: Printer,
@@ -115,7 +109,7 @@ const Contact = () => {
               variant="travel" 
               size="lg" 
               className="px-8 py-4"
-              onClick={() => window.open('mailto:info@ramoniktravels.com')}
+              onClick={() => window.open('mailto:ramoniktravels@gmail.com')}
             >
               <Mail className="h-5 w-5 mr-2" />
               Send Email
