@@ -887,7 +887,7 @@ const Destinations = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap gap-4 justify-center">
             <div className="flex flex-wrap gap-2">
-              <span className="text-sm font-medium text-muted-foreground">Continent:</span>
+              <span className="text-sm font-medium text-muted-foreground">Continen:</span>
               {continents.map((continent) => (
                 <Button
                   key={continent}
