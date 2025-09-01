@@ -2,6 +2,7 @@ import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 // Import destination images
 import parisImage from "@/assets/destinations/paris.jpg";
@@ -359,35 +360,36 @@ const Gallery = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredImages.map((image, index) => (
-              <div 
-                key={index} 
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                viewport={{ once: true }}
                 className="group relative overflow-hidden rounded-lg shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
               >
-                <div 
+                <div
                   className="aspect-square bg-cover bg-center relative overflow-hidden"
                   style={{ backgroundImage: `url(${image.image})` }}
                 >
-                  {/* Dark overlay for better text readability */}
-                  <div className="absolute inset-0 bg-black/20" />
-                  
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300" />
-                  
-                  {/* Content */}
-                  <div className="absolute inset-0 p-4 flex flex-col justify-end">
-                    <div className="transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <span className="inline-block bg-white text-travel-blue px-2 py-1 rounded-full text-xs font-medium mb-2">
-                        {image.category}
-                      </span>
-                      <h3 className="text-white font-semibold text-lg mb-1">{image.title}</h3>
-                      <p className="text-white/90 text-sm">{image.description}</p>
-                    </div>
+                  {/* Always-visible place name/title at the bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-4 py-3">
+                    <h3 className="text-white font-semibold text-lg drop-shadow">{image.title}</h3>
+                    <span className="inline-block bg-white text-travel-blue px-2 py-1 rounded-full text-xs font-medium mt-2">
+                      {image.category}
+                    </span>
                   </div>
-                  
-                  {/* Zoom effect overlay */}
-                  <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Overlay content on hover (optional, can keep for description) */}
+                  <motion.div
+                    initial={{ y: 40, opacity: 0 }}
+                    whileHover={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute inset-0 p-4 flex flex-col justify-end pointer-events-none"
+                  >
+                    <p className="text-white/90 text-sm">{image.description}</p>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
