@@ -156,15 +156,33 @@ const About = () => {
                 >
                   <Card className="text-center hover:shadow-xl transition-shadow duration-300">
                     <CardContent className="p-6">
-                      <div className="bg-gradient-to-r from-travel-blue to-travel-blue p-4 rounded-full w-fit mx-auto mb-4">
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.1 }}
+                        viewport={{ once: true }}
+                        className="bg-gradient-to-r from-travel-blue to-travel-blue p-4 rounded-full w-fit mx-auto mb-4"
+                      >
                         <IconComponent className="h-8 w-8 text-white" />
-                      </div>
-                      <h3 className="text-xl font-semibold text-travel-blue mb-3">
+                      </motion.div>
+                      <motion.h3
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="text-xl font-semibold text-travel-blue mb-3"
+                      >
                         {value.title}
-                      </h3>
-                      <p className="text-muted-foreground">
+                      </motion.h3>
+                      <motion.p
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.3 }}
+                        viewport={{ once: true }}
+                        className="text-muted-foreground"
+                      >
                         {value.description}
-                      </p>
+                      </motion.p>
                     </CardContent>
                   </Card>
                 </motion.div>
