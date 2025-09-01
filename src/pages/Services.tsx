@@ -18,6 +18,7 @@ import {
   Shield,
   HeadphonesIcon
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Services = () => {
   const services = [
@@ -118,27 +119,47 @@ const Services = () => {
               return (
                 <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <CardContent className="p-8">
-                    <div className="flex items-start space-x-4">
-                      <div className="bg-gradient-to-r from-travel-blue to-travel-blue p-3 rounded-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                        <IconComponent className="h-8 w-8 text-white" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-travel-blue mb-3 group-hover:text-travel-Blue transition-colors duration-300">
-                          {service.title}
-                        </h3>
-                        <p className="text-muted-foreground mb-4 leading-relaxed">
-                          {service.description}
-                        </p>
-                        <ul className="space-y-2">
-                          {service.features.map((feature, featureIndex) => (
-                            <li key={featureIndex} className="flex items-center space-x-2 text-sm">
-                              <div className="w-2 h-2 bg-travel-red rounded-full"></div>
-                              <span>{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.1 }}
+                      viewport={{ once: true }}
+                      className="bg-gradient-to-r from-travel-blue to-travel-blue p-3 rounded-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300 mb-2"
+                    >
+                      <IconComponent className="h-8 w-8 text-white" />
+                    </motion.div>
+                    <motion.h3
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.2 }}
+                      viewport={{ once: true }}
+                      className="text-2xl font-bold text-travel-blue mb-3 group-hover:text-travel-Blue transition-colors duration-300"
+                    >
+                      {service.title}
+                    </motion.h3>
+                    <motion.p
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.3 }}
+                      viewport={{ once: true }}
+                      className="text-muted-foreground mb-4 leading-relaxed"
+                    >
+                      {service.description}
+                    </motion.p>
+                    <motion.ul
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.4 }}
+                      viewport={{ once: true }}
+                      className="space-y-2"
+                    >
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center space-x-2 text-sm">
+                          <div className="w-2 h-2 bg-travel-red rounded-full"></div>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </motion.ul>
                   </CardContent>
                 </Card>
               );
