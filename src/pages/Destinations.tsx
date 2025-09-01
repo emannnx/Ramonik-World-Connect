@@ -951,15 +951,35 @@ const Destinations = () => {
                       </div>
                     </div>
                     
-                    <CardContent className="p-4">
-                      <div className="flex items-center space-x-2 mb-2">
+                    <CardContent className="p-4 bg-white rounded-b-2xl shadow-inner">
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.1 }}
+                        viewport={{ once: true }}
+                        className="flex items-center space-x-2 mb-2"
+                      >
                         <MapPin className="h-4 w-4 text-travel-red" />
                         <h3 className="text-lg font-bold text-travel-blue">{destination.name}</h3>
-                      </div>
-                      
-                      <p className="text-muted-foreground text-sm mb-3 line-clamp-2">{destination.description}</p>
-                      
-                      <div className="space-y-1 mb-3">
+                      </motion.div>
+
+                      <motion.p
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="text-muted-foreground text-sm mb-3 line-clamp-2"
+                      >
+                        {destination.description}
+                      </motion.p>
+
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.3 }}
+                        viewport={{ once: true }}
+                        className="space-y-1 mb-3"
+                      >
                         <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                           <Clock className="h-3 w-3" />
                           <span>{destination.duration}</span>
@@ -968,24 +988,39 @@ const Destinations = () => {
                           <Users className="h-3 w-3" />
                           <span>{destination.groupSize}</span>
                         </div>
-                      </div>
-                      
-                      <div className="mb-3">
+                      </motion.div>
+
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.4 }}
+                        viewport={{ once: true }}
+                        className="mb-3"
+                      >
                         <div className="flex flex-wrap gap-1">
                           {destination.highlights.slice(0, 2).map((highlight, highlightIndex) => (
-                            <span key={highlightIndex} className="bg-travel-light-blue text-travel-blue text-xs px-2 py-1 rounded-full">
+                            <span
+                              key={highlightIndex}
+                              className="bg-travel-light-blue text-travel-blue text-xs px-2 py-1 rounded-full"
+                            >
                               {highlight}
                             </span>
                           ))}
                         </div>
-                      </div>
-                      
-                      <div className="flex items-center justify-between">
+                      </motion.div>
+
+                      <motion.div
+                        initial={{ opacity: 0, x: 10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: 0.5 }}
+                        viewport={{ once: true }}
+                        className="flex items-center justify-between"
+                      >
                         <span className="text-travel-red font-bold text-sm">{destination.price}</span>
                         <Button variant="travel" size="sm" className="text-xs px-3 py-1">
                           Learn More
                         </Button>
-                      </div>
+                      </motion.div>
                     </CardContent>
                   </Card>
                 </motion.div>
