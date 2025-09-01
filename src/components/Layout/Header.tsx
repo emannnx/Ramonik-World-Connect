@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Plane, Menu, X } from "lucide-react";
@@ -6,7 +6,14 @@ import { motion } from "framer-motion";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -22,10 +29,12 @@ const Header = () => {
 
   return (
     <motion.header
-      className="bg-white shadow-lg sticky top-0 z-50"
+      className={`bg-white shadow-lg sticky top-0 z-50 transition-all duration-300 ${
+        scrolled ? "backdrop-blur-md bg-white/80 shadow-2xl" : ""
+      }`}
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }} // matches hero timing
+      transition={{ duration: 0.35, ease: "easeOut" }}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
@@ -33,7 +42,7 @@ const Header = () => {
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
           >
             <Link to="/" className="flex items-center space-x-2">
               <div className="bg-gradient-to-r from-travel-blue to-travel-blue p-2 rounded-lg">
@@ -53,7 +62,7 @@ const Header = () => {
             animate="visible"
             variants={{
               hidden: {},
-              visible: { transition: { staggerChildren: 0.08, delayChildren: 0.5 } },
+              visible: { transition: { staggerChildren: 0.05, delayChildren: 0.2 } },
             }}
           >
             {navItems.map((item) => (
@@ -63,7 +72,7 @@ const Header = () => {
                   hidden: { opacity: 0, y: -10 },
                   visible: { opacity: 1, y: 0 },
                 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.25 }}
               >
                 <Link
                   to={item.path}
@@ -84,7 +93,7 @@ const Header = () => {
             className="hidden md:flex items-center space-x-3"
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.7, duration: 0.6, ease: "easeOut" }}
+            transition={{ delay: 0.2, duration: 0.25, ease: "easeOut" }}
           >
             <Button variant="travel" size="sm"  onClick={() => window.open('mailto:ramoniktravels@gmail.com')} >
               Book Now
@@ -105,7 +114,7 @@ const Header = () => {
         <motion.div
           initial={{ x: "100%" }}
           animate={{ x: isMenuOpen ? "0%" : "100%" }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
           className="md:hidden fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40"
         >
           <div className="flex justify-between items-center p-4 border-b">
@@ -121,7 +130,7 @@ const Header = () => {
                 key={item.name}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: 0.2 }}
+                transition={{ duration: 0.2, delay: 0.1 }}
               >
                 <Link
                   to={item.path}
@@ -139,7 +148,7 @@ const Header = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.4 }}
+              transition={{ delay: 0.15, duration: 0.2 }}
             >
               <Button variant="travel" size="sm" className="w-fit mt-4">
                 Book Now
