@@ -49,7 +49,7 @@ const Header = () => {
                 <Plane className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-travel-blue">Ramonik Travel</h1>
+                <h1 className="text-xl font-bold text-travel-blue">Ramonik Travels</h1>
                 <p className="text-xs text-muted-foreground">We connect you to the world</p>
               </div>
             </Link>
