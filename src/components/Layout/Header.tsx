@@ -29,14 +29,14 @@ const Header = () => {
 
   return (
     <motion.header
-      className={`bg-white shadow-lg sticky top-0 z-50 transition-all duration-300 ${
-        scrolled ? "backdrop-blur-md bg-white/80 shadow-2xl" : ""
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white ${
+        scrolled ? "shadow-2xl" : "shadow-lg"
       }`}
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.35, ease: "easeOut" }}
     >
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-4 bg-white">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.div
@@ -95,7 +95,11 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.25, ease: "easeOut" }}
           >
-            <Button variant="travel" size="sm"  onClick={() => window.open('mailto:ramoniktravels@gmail.com')} >
+            <Button
+              variant="travel"
+              size="sm"
+              onClick={() => window.open("mailto:ramoniktravels@gmail.com")}
+            >
               Book Now
             </Button>
           </motion.div>
@@ -150,7 +154,12 @@ const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15, duration: 0.2 }}
             >
-              <Button variant="travel" size="sm" className="w-fit mt-4">
+              <Button
+                variant="travel"
+                size="sm"
+                className="w-fit mt-4"
+                onClick={() => window.open("mailto:ramoniktravels@gmail.com")}
+              >
                 Book Now
               </Button>
             </motion.div>
