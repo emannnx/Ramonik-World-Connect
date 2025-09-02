@@ -102,7 +102,7 @@ const Reviews = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-gray-50 flex flex-col mt-[20%] sm:mt-[4%]">
       <Header />
 
       {/* Hero Section */}

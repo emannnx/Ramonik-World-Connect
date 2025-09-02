@@ -46,7 +46,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white mt-[20%] sm:mt-[4%]">
       <Header />
 
       {/* Hero Section */}
@@ -62,9 +62,9 @@ const About = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl text-center">
           <motion.h1
-            className="text-5xl md:text-6xl font-bold mb-6 break-words"
+            className="text-5xl md:text-6xl font-bold mb-6 break-words text-center"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -86,14 +86,14 @@ const About = () => {
       {/* Mission Section */}
       <section className="py-20 bg-white">
         <motion.div
-          className="container mx-auto px-4 sm:px-6 lg:px-8"
+          className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-travel-blue mb-8 break-words">
+            <h2 className="text-4xl font-bold text-travel-blue mb-8 break-words text-center">
               Our Mission
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-12 break-words text-center">
@@ -112,7 +112,7 @@ const About = () => {
               <div className="flex items-center justify-center mb-4">
                 <Target className="h-12 w-12 text-travel-blue" />
               </div>
-              <h3 className="text-2xl font-bold text-travel-blue mb-4 break-words">
+              <h3 className="text-2xl font-bold text-travel-blue mb-4 break-words text-center">
                 Our Vision
               </h3>
               <p className="text-muted-foreground break-words text-center">
@@ -127,7 +127,7 @@ const About = () => {
 
       {/* Values Section */}
       <section className="py-20 bg-travel-light-blue">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
@@ -135,7 +135,7 @@ const About = () => {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-travel-blue mb-4 break-words">
+            <h2 className="text-4xl font-bold text-travel-blue mb-4 break-words text-center">
               Our Values
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto break-words text-center">
@@ -170,7 +170,7 @@ const About = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.2 }}
                         viewport={{ once: true }}
-                        className="text-xl font-semibold text-travel-blue mb-3 break-words"
+                        className="text-xl font-semibold text-travel-blue mb-3 break-words text-center"
                       >
                         {value.title}
                       </motion.h3>
@@ -194,7 +194,7 @@ const About = () => {
 
       {/* Why Choose Us Section */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -202,7 +202,7 @@ const About = () => {
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-travel-blue mb-8 break-words">
+              <h2 className="text-4xl font-bold text-travel-blue mb-8 break-words text-center">
                 Why Choose Ramonik?
               </h2>
               <div className="space-y-4">
@@ -216,7 +216,7 @@ const About = () => {
                     viewport={{ once: true }}
                   >
                     <CheckCircle className="h-6 w-6 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground break-words">{reason}</span>
+                    <span className="text-muted-foreground break-words text-left">{reason}</span>
                   </motion.div>
                 ))}
               </div>
@@ -230,7 +230,7 @@ const About = () => {
               viewport={{ once: true }}
               whileHover={{ scale: 1.02 }}
             >
-              <h3 className="text-2xl font-bold mb-6 break-words">Our Commitment to You</h3>
+              <h3 className="text-2xl font-bold mb-6 break-words text-center">Our Commitment to You</h3>
               <p className="mb-6 break-words text-center">
                 We understand that every traveler is unique, and that's why we
                 take the time to understand your specific needs, preferences,
@@ -256,7 +256,7 @@ const About = () => {
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             {[
               { number: "15+", label: "Years Experience" },
@@ -271,10 +271,10 @@ const About = () => {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="text-4xl md:text-5xl font-bold mb-2 break-words">
+                <div className="text-4xl md:text-5xl font-bold mb-2 break-words text-center">
                   {stat.number}
                 </div>
-                <div className="text-white/80 break-words">{stat.label}</div>
+                <div className="text-white/80 break-words text-center">{stat.label}</div>
               </motion.div>
             ))}
           </div>
