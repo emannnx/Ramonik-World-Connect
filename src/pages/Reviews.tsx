@@ -106,7 +106,7 @@ const Reviews = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20 shadow-lg">
+      <section className="bg-gradient-to-r from-blue-900 to-blue-900 text-white py-20 shadow-lg">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
             Customer Reviews

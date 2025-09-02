@@ -1,54 +1,85 @@
 import { Link } from "react-router-dom";
 import { Plane, Phone, Mail, Printer, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
+
+const sectionVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+};
 
 const Footer = () => {
   return (
-    <footer className="bg-travel-blue text-white">
+    <motion.footer
+      className="bg-travel-blue text-white"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-4 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: { staggerChildren: 0.15 },
+            },
+          }}
+        >
           {/* Company Info */}
-          <div className="space-y-4">
+          <motion.div variants={sectionVariant} className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="bg-white p-2 rounded-lg">
+              <motion.div
+                className="bg-white p-2 rounded-lg"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ duration: 0.2 }}
+              >
                 <Plane className="h-6 w-6 text-travel-blue" />
-              </div>
+              </motion.div>
               <div>
-                <h3 className="text-lg font-bold">Ramonik Travel & Tours</h3>
+                <h3 className="text-lg font-bold">Ramonik Travels & Tours</h3>
                 <p className="text-sm opacity-90">We connect you to the world</p>
               </div>
             </div>
             <p className="text-sm opacity-90">
               Your trusted partner for global travel experiences. We provide comprehensive travel services to make your journey memorable.
             </p>
-          </div>
+          </motion.div>
 
           {/* Quick Links */}
-          <div>
+          <motion.div variants={sectionVariant}>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link to="/about" className="text-sm opacity-90 hover:opacity-100 transition-opacity">About Us</Link></li>
-              <li><Link to="/services" className="text-sm opacity-90 hover:opacity-100 transition-opacity">Services</Link></li>
-              <li><Link to="/destinations" className="text-sm opacity-90 hover:opacity-100 transition-opacity">Destinations</Link></li>
-              <li><Link to="/gallery" className="text-sm opacity-90 hover:opacity-100 transition-opacity">Gallery</Link></li>
-              <li><Link to="/reviews" className="text-sm opacity-90 hover:opacity-100 transition-opacity">Reviews</Link></li>
+              {["About Us", "Services", "Destinations", "Gallery", "Reviews"].map((link, idx) => (
+                <motion.li
+                  key={idx}
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Link to={`/${link.toLowerCase().replace(" ", "")}`} className="text-sm opacity-90 hover:opacity-100 transition-opacity">
+                    {link}
+                  </Link>
+                </motion.li>
+              ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Services */}
-          <div>
+          <motion.div variants={sectionVariant}>
             <h4 className="font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2 text-sm opacity-90">
-              <li>Flight Booking</li>
-              <li>Hotel Reservations</li>
-              <li>Car Rental</li>
-              <li>Visa Assistance</li>
-              <li>Cruise Reservations</li>
-              <li>Tours & Vacations</li>
+              {["Flight Booking", "Hotel Reservations", "Car Rental", "Visa Assistance", "Cruise Reservations", "Tours & Vacations"].map((service, idx) => (
+                <motion.li key={idx} whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                  {service}
+                </motion.li>
+              ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Contact Info */}
-          <div>
+          <motion.div variants={sectionVariant}>
             <h4 className="font-semibold mb-4">Contact Us</h4>
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
@@ -66,21 +97,25 @@ const Footer = () => {
               <div className="flex items-start space-x-2">
                 <Mail className="h-4 w-4 mt-0.5" />
                 <div className="text-sm opacity-90">
-                  <div>info@ramoniktravels.com</div>
-                  <div>ramonikcollections@gmail.com</div>
+                  <div>ramoniktravels@gmail.com</div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="border-t border-white/20 mt-8 pt-8 text-center">
+        <motion.div
+          className="border-t border-white/20 mt-8 pt-8 text-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+        >
           <p className="text-sm opacity-90">
-            © 2024 Ramonik Travel & Tours. All rights reserved.
+            © 2025 Ramonik Travel & Tours. All rights reserved.
           </p>
-        </div>
+        </motion.div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

@@ -19,31 +19,30 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
         <div className="max-w-4xl mx-auto space-y-6">
           {/* Animated Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight relative inline-block overflow-hidden">
-            <motion.span
-              initial={{ clipPath: "inset(0 100% 0 0)" }}
-              whileInView={{ clipPath: "inset(0 0% 0 0)" }}
-              viewport={{ once: false }}
-              transition={{ duration: 1.4, ease: "easeInOut" }}
-              className="inline-block"
-            >
-              We Connect You to the
-              <span className="bg-gradient-to-r from-travel-gold to-yellow-300 bg-clip-text text-transparent block">
-                World
-              </span>
-            </motion.span>
+<h1 className="text-5xl md:text-7xl font-extrabold leading-tight relative inline-block overflow-hidden">
+  <motion.span
+    initial={{ clipPath: "inset(0 100% 0 0)" }}
+    whileInView={{ clipPath: "inset(0 0% 0 0)" }}
+    viewport={{ once: false }}
+    transition={{ duration: 1.4, ease: "easeInOut" }}
+    className="inline-block text-yellow-300 drop-shadow-lg"
+  >
+    WE CONNECT YOU TO THE WORLD
+  </motion.span>
 
-            {/* Airplane Animation */}
-            <motion.div
-              initial={{ x: "-120%" }}
-              whileInView={{ x: "140%" }}
-              viewport={{ once: false }}
-              transition={{ duration: 1.4, ease: "easeInOut" }}
-              className="absolute top-1/2 left-0"
-            >
-              <Plane className="text-travel-gold w-8 h-8 rotate-45" />
-            </motion.div>
-          </h1>
+  {/* Airplane Animation */}
+  <motion.div
+    initial={{ x: "-120%" }}
+    whileInView={{ x: "140%" }}
+    viewport={{ once: false }}
+    transition={{ duration: 1.4, ease: "easeInOut" }}
+    className="absolute top-1/2 left-0"
+  >
+    <Plane className="text-yellow-300 w-8 h-8 rotate-45 drop-shadow-md" />
+  </motion.div>
+</h1>
+
+
 
           {/* Subtext */}
           <motion.p

@@ -323,14 +323,11 @@ const Gallery = () => {
   return (
     <div className="min-h-screen">
       <Header />
-
+      
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-travels-blue to-travels-blue text-white py-20">
+      <section className="bg-gradient-to-r from-travel-blue to-travel-blue text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Travels Gallery</h1>
-          <span className="font-extrabold text-2xl md:text-3xl text-travels-red drop-shadow-lg block mb-4">
-            WE CONNECT YOU TO THE WORLD
-          </span>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">
             Discover the world through 150+ stunning images of amazing destinations and travel experiences
           </p>
@@ -347,8 +344,8 @@ const Gallery = () => {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-6 py-2 rounded-full transition-all duration-300 ${
                   category === selectedCategory
-                    ? "bg-travels-blue text-white shadow-md"
-                    : "bg-gray-100 text-gray-700 hover:bg-travels-light-blue hover:text-travels-blue"
+                    ? "bg-travel-blue text-white shadow-md"
+                    : "bg-gray-100 text-gray-700 hover:bg-travel-light-blue hover:text-travel-blue"
                 }`}
               >
                 {category} {category === "All" ? `(${galleryImages.length})` : `(${galleryImages.filter(img => img.category === category).length})`}
@@ -359,7 +356,7 @@ const Gallery = () => {
       </section>
 
       {/* Gallery Grid */}
-      <section className="py-20 bg-gradient-to-b from-white to-travels-light-blue">
+      <section className="py-20 bg-gradient-to-b from-white to-travel-light-blue">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredImages.map((image, index) => (
@@ -378,7 +375,7 @@ const Gallery = () => {
                   {/* Always-visible place name/title at the bottom */}
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-4 py-3">
                     <h3 className="text-white font-semibold text-lg drop-shadow">{image.title}</h3>
-                    <span className="inline-block bg-white text-travels-blue px-2 py-1 rounded-full text-xs font-medium mt-2">
+                    <span className="inline-block bg-white text-travel-blue px-2 py-1 rounded-full text-xs font-medium mt-2">
                       {image.category}
                     </span>
                   </div>
@@ -399,23 +396,17 @@ const Gallery = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-travels-blue text-white">
+      <section className="py-20 bg-travel-blue text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Create Your Own Memories?</h2>
           <p className="text-xl mb-8 opacity-90">Join thousands of happy travelers who have explored the world with us</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/booking"
-              className="bg-white text-travels-blue px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
-            >
+            <button className="bg-white text-travel-blue px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
               Start Planning
-            </a>
-            <a
-              href="/booking"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-travels-blue transition-all duration-300"
-            >
+            </button>
+            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-travel-blue transition-all duration-300">
               View Packages
-            </a>
+            </button>
           </div>
         </div>
       </section>
