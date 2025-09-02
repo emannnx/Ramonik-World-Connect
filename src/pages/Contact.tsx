@@ -4,6 +4,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock, Printer, MessageCircle } from "lucide-react";
+import { useState } from "react";
 
 const Contact = () => {
   const contactInfo = [
@@ -51,6 +52,40 @@ const Contact = () => {
     "National ID Card",
     "Shipping Services"
   ];
+
+  // State for form values
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    destination: "",
+    service: "",
+    message: ""
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const subject = `New Booking Request from ${form.name}`;
+    const body = `
+Name: ${form.name}
+Email: ${form.email}
+Phone: ${form.phone}
+Destination: ${form.destination}
+Service Needed: ${form.service}
+
+Message:
+${form.message}
+    `;
+
+    window.location.href = `mailto:ramoniktravels@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+  };
 
   return (
     <div className="min-h-screen">
@@ -142,7 +177,7 @@ const Contact = () => {
               {/* Contact Form */}
               <Card className="shadow-lg">
                 <CardContent className="p-8">
-                  <form className="space-y-6">
+                  <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-medium text-travel-blue mb-2">
@@ -150,6 +185,10 @@ const Contact = () => {
                         </label>
                         <input
                           type="text"
+                          name="name"
+                          value={form.name}
+                          onChange={handleChange}
+                          required
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-travel-blue focus:border-transparent"
                           placeholder="Enter your full name"
                         />
@@ -160,6 +199,10 @@ const Contact = () => {
                         </label>
                         <input
                           type="email"
+                          name="email"
+                          value={form.email}
+                          onChange={handleChange}
+                          required
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-travel-blue focus:border-transparent"
                           placeholder="Enter your email"
                         />
@@ -173,6 +216,10 @@ const Contact = () => {
                         </label>
                         <input
                           type="tel"
+                          name="phone"
+                          value={form.phone}
+                          onChange={handleChange}
+                          required
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-travel-blue focus:border-transparent"
                           placeholder="Enter your phone number"
                         />
@@ -183,6 +230,9 @@ const Contact = () => {
                         </label>
                         <input
                           type="text"
+                          name="destination"
+                          value={form.destination}
+                          onChange={handleChange}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-travel-blue focus:border-transparent"
                           placeholder="Where would you like to go?"
                         />
@@ -193,7 +243,13 @@ const Contact = () => {
                       <label className="block text-sm font-medium text-travel-blue mb-2">
                         Service Needed *
                       </label>
-                      <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-travel-blue focus:border-transparent">
+                      <select
+                        name="service"
+                        value={form.service}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-travel-blue focus:border-transparent"
+                      >
                         <option value="">Select a service</option>
                         {services.map((service, index) => (
                           <option key={index} value={service}>{service}</option>
@@ -206,13 +262,16 @@ const Contact = () => {
                         Message
                       </label>
                       <textarea
+                        name="message"
+                        value={form.message}
+                        onChange={handleChange}
                         rows={4}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-travel-blue focus:border-transparent"
                         placeholder="Tell us more about your travel plans..."
                       />
                     </div>
                     
-                    <Button variant="travel" size="lg" className="w-full py-3">
+                    <Button type="submit" variant="travel" size="lg" className="w-full py-3">
                       Send Message
                     </Button>
                   </form>
