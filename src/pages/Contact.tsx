@@ -223,7 +223,7 @@ const Contact = () => {
               <div className="space-y-8">
                 <Card className="bg-gradient-to-br from-travel-blue to-travel-red text-white">
                   <CardContent className="p-8">
-                    <h3 className="text-2xl font-bold mb-6">Why Choose Ramonik Travels?</h3>
+                    <h3 className="text-2xl font-bold mb-6">Why Choose Ramonik Travels.?</h3>
                     <div className="space-y-4">
                       <div className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-white rounded-full mt-2 flex-shrink-0"></div>
