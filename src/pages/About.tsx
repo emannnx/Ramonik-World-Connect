@@ -51,7 +51,7 @@ const About = () => {
 
       {/* Hero Section */}
       <motion.section
-        className="bg-gradient-to-r from-travel-blue text-white py-20 bg-cover bg-center"
+        className="bg-gradient-to-r from-travels-blue text-white py-20 bg-cover bg-center"
         style={{
           backgroundImage: `url(https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ivSmo8DuZ97g/v2/-1x-1.webp)`,
           backgroundPosition: "center",
@@ -69,8 +69,11 @@ const About = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            About Ramonik Travel & Tours
+            About Ramonik Travels & Tours
           </motion.h1>
+          <span className="font-extrabold text-2xl md:text-3xl text-travels-red drop-shadow-lg block mb-4">
+            WE CONNECT YOU TO THE WORLD
+          </span>
           <motion.p
             className="text-xl md:text-2xl max-w-3xl mx-auto opacity-90"
             initial={{ opacity: 0, y: 20 }}
@@ -93,11 +96,11 @@ const About = () => {
           viewport={{ once: true }}
         >
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-travel-blue mb-8">
+            <h2 className="text-4xl font-bold text-travels-blue mb-8">
               Our Mission
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-12">
-              At Ramonik Travel & Tours, our mission is simple: to connect you
+              At Ramonik Travels & Tours, our mission is simple: to connect you
               to the world in the most seamless, enjoyable, and memorable way
               possible. We believe that travel is not just about reaching a
               destination, but about the journey, the experiences, and the
@@ -105,14 +108,14 @@ const About = () => {
             </p>
 
             <motion.div
-              className="bg-gradient-to-r from-travel-light-blue to-white p-8 rounded-lg"
+              className="bg-gradient-to-r from-travels-light-blue to-white p-8 rounded-lg"
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 200 }}
             >
               <div className="flex items-center justify-center mb-4">
-                <Target className="h-12 w-12 text-travel-blue" />
+                <Target className="h-12 w-12 text-travels-blue" />
               </div>
-              <h3 className="text-2xl font-bold text-travel-blue mb-4">
+              <h3 className="text-2xl font-bold text-travels-blue mb-4">
                 Our Vision
               </h3>
               <p className="text-muted-foreground">
@@ -126,7 +129,7 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-travel-light-blue">
+      <section className="py-20 bg-travels-light-blue">
         <div className="container mx-auto px-4">
           <motion.div
             className="text-center mb-16"
@@ -135,7 +138,7 @@ const About = () => {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-travel-blue mb-4">
+            <h2 className="text-4xl font-bold text-travels-blue mb-4">
               Our Values
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -161,7 +164,7 @@ const About = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.1 }}
                         viewport={{ once: true }}
-                        className="bg-gradient-to-r from-travel-blue to-travel-blue p-4 rounded-full w-fit mx-auto mb-4"
+                        className="bg-gradient-to-r from-travels-blue to-travels-blue p-4 rounded-full w-fit mx-auto mb-4"
                       >
                         <IconComponent className="h-8 w-8 text-white" />
                       </motion.div>
@@ -170,7 +173,7 @@ const About = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.2 }}
                         viewport={{ once: true }}
-                        className="text-xl font-semibold text-travel-blue mb-3"
+                        className="text-xl font-semibold text-travels-blue mb-3"
                       >
                         {value.title}
                       </motion.h3>
@@ -192,7 +195,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Why Choose Ramonik Travels Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -202,8 +205,8 @@ const About = () => {
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-travel-blue mb-8">
-                Why Choose Ramonik?
+              <h2 className="text-4xl font-bold text-travels-blue mb-8">
+                Why Choose Ramonik Travels
               </h2>
               <div className="space-y-4">
                 {reasons.map((reason, index) => (
@@ -223,7 +226,7 @@ const About = () => {
             </motion.div>
 
             <motion.div
-              className="bg-gradient-to-br from-travel-blue to-travel-blue p-8 rounded-lg text-white"
+              className="bg-gradient-to-br from-travels-blue to-travels-blue p-8 rounded-lg text-white"
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
@@ -250,7 +253,7 @@ const About = () => {
 
       {/* Stats Section */}
       <motion.section
-        className="py-20 bg-travel-blue text-white"
+        className="py-20 bg-travels-blue text-white"
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7 }}
