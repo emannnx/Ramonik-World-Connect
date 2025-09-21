@@ -6,7 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Star, Quote, Plus, Trash } from "lucide-react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { collection, addDoc, getDocs, query, orderBy, deleteDoc, doc } from "firebase/firestore";
+import { db } from "@/lib/firebase";
+import { toast } from "sonner";
 
 interface Review {
   id: string;
@@ -28,16 +31,19 @@ const Reviews = () => {
   const [submitting, setSubmitting] = useState(false);
 
   // Fetch reviews from localStorage
-  const fetchReviews = () => {
+  const fetchReviews = async () => {
     try {
-      const storedReviews = localStorage.getItem("reviews");
-      if (storedReviews) {
-        const parsed = JSON.parse(storedReviews) as Review[];
-        parsed.sort(
-          (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
-        );
-        setReviews(parsed);
-      }
+      const q = query(collection(db, "reviews"), orderBy("created_at", "desc"));
+      const querySnapshot = await getDocs(q);
+
+      const reviewList: Review[] = [];
+      querySnapshot.forEach((docSnap) => {
+        reviewList.push({
+          id: docSnap.id, ...(docSnap.data() as Omit<Review, 'id'>),
+        });
+      });
+
+      setReviews(reviewList);
       setLoading(false);
     } catch (error) {
       console.error("Error fetching reviews:", error);
@@ -46,43 +52,35 @@ const Reviews = () => {
   };
 
   // Submit new review
-  const handleSubmitReview = async (e: React.FormEvent) => {
+  const submitReview = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name.trim() || !formData.review.trim() || formData.rating === 0) {
-      alert("Please fill in all required fields and select a rating.");
+    if (!formData.name.trim() || formData.rating === 0 || !formData.review.trim()) {
+      toast.error("Please fill in all fields and provide a rating.");
       return;
     }
 
     setSubmitting(true);
-
     try {
-      const newReview: Review = {
-        id: Date.now().toString(),
+      const newReview = {
         name: formData.name,
         rating: formData.rating,
         review: formData.review,
         created_at: new Date().toISOString()
       };
 
-      const updatedReviews = [newReview, ...reviews];
-      setReviews(updatedReviews);
-      localStorage.setItem("reviews", JSON.stringify(updatedReviews));
+      await addDoc(collection(db, "reviews"), newReview);
 
+      fetchReviews();
       setFormData({ name: "", rating: 0, review: "" });
       setShowAddForm(false);
+
+      toast.success("Thank you for your review!");
     } catch (error) {
       console.error("Error submitting review:", error);
+      toast.error("Failed to submit your review. Please try again.");
     } finally {
       setSubmitting(false);
-    }
-  };
-
-  // Clear all reviews
-  const handleClearReviews = () => {
-    if (window.confirm("Are you sure you want to delete all reviews?")) {
-      localStorage.removeItem("reviews");
-      setReviews([]);
     }
   };
 
@@ -94,9 +92,8 @@ const Reviews = () => {
     return Array.from({ length: 5 }, (_, index) => (
       <Star
         key={index}
-        className={`h-5 w-5 ${
-          index < rating ? "text-yellow-500 fill-current" : "text-gray-300"
-        }`}
+        className={`h-5 w-5 ${index < rating ? "text-yellow-500 fill-current" : "text-gray-300"
+          }`}
       />
     ));
   };
@@ -149,7 +146,7 @@ const Reviews = () => {
             </div>
           </div>
 
-          {reviews.length > 0 && (
+          {/* {reviews.length > 0 && (
             <div className="mt-6 flex justify-center">
               <Button
                 variant="destructive"
@@ -160,7 +157,7 @@ const Reviews = () => {
                 <Trash className="w-4 h-4" /> Clear All Reviews
               </Button>
             </div>
-          )}
+          )} */}
         </div>
       </section>
 
@@ -213,7 +210,7 @@ const Reviews = () => {
               <p className="text-gray-500 mt-1">We value your feedback!</p>
             </div>
 
-            <form onSubmit={handleSubmitReview} className="p-6 space-y-6">
+            <form onSubmit={submitReview} className="p-6 space-y-6">
               <div>
                 <label className="block text-sm font-medium text-blue-700 mb-2">
                   Your Name *
@@ -244,11 +241,10 @@ const Reviews = () => {
                       className="p-1 hover:scale-110 transition-transform"
                     >
                       <Star
-                        className={`h-8 w-8 ${
-                          index < formData.rating
-                            ? "text-yellow-500 fill-current"
-                            : "text-gray-300 hover:text-yellow-400"
-                        }`}
+                        className={`h-8 w-8 ${index < formData.rating
+                          ? "text-yellow-500 fill-current"
+                          : "text-gray-300 hover:text-yellow-400"
+                          }`}
                       />
                     </button>
                   ))}
