@@ -45,13 +45,23 @@ const Header = () => {
             transition={{ duration: 0.35, ease: "easeOut" }}
           >
             <Link to="/" className="flex items-center space-x-2">
-              <div className="bg-gradient-to-r from-travel-blue to-travel-blue p-2 rounded-lg">
-                <Plane className="h-6 w-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-travel-blue">Ramonik Travels</h1>
-                <p className="text-xs text-muted-foreground">We connect you to the world</p>
-              </div>
+             <div className="flex items-center space-x-3">
+  {/* Icon Background */}
+  <div className="bg-gradient-to-r from-blue-500 via-sky-400 to-indigo-600 p-3 rounded-2xl shadow-lg">
+    <Plane className="h-7 w-7 text-white drop-shadow-md transform rotate-45" />
+  </div>
+
+  {/* Text Section */}
+  <div>
+    <h1 className="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-indigo-700 via-blue-600 to-sky-500 text-transparent bg-clip-text">
+      Ramonik Travels
+    </h1>
+    <p className="text-sm text-gray-600 font-medium italic">
+      We connect you to the world ✈️
+    </p>
+  </div>
+</div>
+
             </Link>
           </motion.div>
 
