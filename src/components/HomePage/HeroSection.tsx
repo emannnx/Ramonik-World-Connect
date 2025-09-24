@@ -24,8 +24,9 @@ const HeroSection = () => {
     initial={{ clipPath: "inset(0 100% 0 0)" }}
     whileInView={{ clipPath: "inset(0 0% 0 0)" }}
     viewport={{ once: false }}
-    transition={{ duration: 1.4, ease: "easeInOut" }}
-    className="inline-block text-yellow-300 drop-shadow-lg"
+    transition={{ duration: 1.4 }} // linear, no ease
+    className="inline-block text-transparent bg-clip-text 
+               bg-gradient-to-r from-yellow-300 to-white drop-shadow-[0_4px_6px_rgba(0,0,0,0.4)]"
   >
     WE CONNECT YOU TO THE WORLD
   </motion.span>
@@ -35,7 +36,7 @@ const HeroSection = () => {
     initial={{ x: "-120%" }}
     whileInView={{ x: "140%" }}
     viewport={{ once: false }}
-    transition={{ duration: 1.4, ease: "easeInOut" }}
+    transition={{ duration: 1.4 }}
     className="absolute top-1/2 left-0"
   >
     <Plane className="text-yellow-300 w-8 h-8 rotate-45 drop-shadow-md" />
