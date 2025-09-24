@@ -10,7 +10,8 @@ import {
   FileText, 
   CreditCard, 
   User, 
-  Package 
+  Package,
+  Bed
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -22,7 +23,7 @@ const ServicesSection = () => {
       description: "Book flights to any destination worldwide with competitive prices and excellent service."
     },
     {
-      icon: Hotel,
+      icon: Bed,
       title: "Hotel Reservations",
       description: "Find and book the perfect accommodation for your stay, from luxury resorts to budget-friendly options."
     },
