@@ -16,7 +16,8 @@ import {
   Package,
   Clock,
   Shield,
-  HeadphonesIcon
+  HeadphonesIcon, 
+  Bed
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -29,7 +30,7 @@ const Services = () => {
       features: ["Best price guarantee", "24/7 flight support", "Flexible booking options", "Group discounts available"]
     },
     {
-      icon: Hotel,
+      icon: Bed,
       title: "Hotel Reservations",
       description: "Find and book the perfect accommodation for your stay, from luxury resorts to budget-friendly options. Our extensive network ensures quality stays worldwide.",
       features: ["5-star to budget options", "Instant confirmation", "Free cancellation available", "Special rates for extended stays"]
