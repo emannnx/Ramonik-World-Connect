@@ -3,8 +3,9 @@ import Footer from "@/components/Layout/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin, Clock, Printer, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Printer, MessageCircle, Instagram, InstagramIcon, FacebookIcon, TicketCheckIcon, Twitter } from "lucide-react";
 import { useState } from "react";
+import tik from "../assets/tik.png"
 
 const Contact = () => {
   const contactInfo = [
@@ -26,6 +27,30 @@ const Contact = () => {
       content: "667-677-6691",
       description: "For document submissions"
     },
+      {
+      icon: InstagramIcon,
+      title: "Instagram",
+      content: "Ramonik.Travels",
+      description: "Secondary contact for all inquiries"
+    },
+      {
+      icon: FacebookIcon,
+      title: "Facebook",
+      content: "Ramonik Travels",
+      description: "Secondary contact for all inquiries"
+    }, 
+     {
+      icon:  `TikTokIcon`,
+      title: "Tiktok",
+      content: "RamonikTravels",
+      description: "Secondary contact for all inquiries"
+    }, 
+       {
+      icon: Twitter,
+      title: "X",
+      content: "RamonikTravels",
+      description: "Secondary contact for all inquiries"
+    }, 
     {
       icon: MapPin,
       title: "Location",
@@ -35,10 +60,23 @@ const Contact = () => {
     {
       icon: Clock,
       title: "Business Hours",
-      content: "Mon-Fri: 9AM-6PM EST",
+      content: "Mon-Fri, 9AM-6PM EST",
       description: "Weekend and after-hours support available"
-    }
+    },
   ];
+
+  const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    {/* Use official TikTok-style path; here’s a simple example path */}
+    <path d="M9.75 3C10.1642 3 10.4444 3.2858 10.5 3.6875V13.125C10.5 14.2131 11.2869 15.1351 12.3608 15.4021C13.4348 15.6691 14.5636 15.2263 15.375 14.3125C16.1864 13.3987 16.5 12.1875 16.5 11V2.25H19.125C19.5392 2.25 19.8194 2.5358 19.875 2.9375V13.6875C19.875 17.4884 16.6134 20.75 12.8125 20.75C9.0116 20.75 5.75 17.4884 5.75 13.6875C5.75 9.8866 9.0116 6.625 12.8125 6.625C13.2577 6.625 13.6921 6.675 14.1062 6.7725C14.1539 6.7819 14.2002 6.7938 14.2439 6.8079C14.2894 6.8229 14.3326 6.8409 14.3734 6.8611L15.375 7.3125C15.375 7.3125 15.375 7.3125 15.375 7.3125L15.375 3.75C15.375 3.3358 15.6592 3.0556 16.0625 3C16.466 2.9444 16.75 3.2246 16.75 3.6375V14.5C16.75 17.8192 14.1817 20.5 10.8125 20.5C7.4433 20.5 4.875 17.8192 4.875 14.5C4.875 11.1808 7.4433 8.5 10.8125 8.5C11.4908 8.5 12.1467 8.6298 12.75 8.8648V3.75C12.75 3.3358 13.0342 3.0556 13.4375 3C13.841 2.9444 14.125 3.2246 14.125 3.6375V9.375C13.4788 9.1357 12.8013 8.9992 12.12 8.9992C8.9778 8.9992 6.5 11.4769 6.5 14.6191C6.5 17.7613 8.9778 20.239 12.12 20.239C15.2621 20.239 17.7399 17.7613 17.7399 14.6191V2.25H16.75V3.6875C16.75 6.8888 14.2496 9.75 11 9.75C9.3005 9.75 7.858 8.8748 7.085 7.5375C6.8817 7.034 6.3718 6.75 5.8542 6.75C5.3366 6.75 4.8267 7.034 4.6234 7.5375C3.9561 8.9284 3.75 10.6612 3.75 12.375C3.75 17.0406 7.9344 21.225 12.6 21.225C17.2656 21.225 21.45 17.0406 21.45 12.375V13.6875C21.45 17.4884 18.1884 20.75 14.3875 20.75C10.5866 20.75 7.325 17.4884 7.325 13.6875C7.325 9.8866 10.5866 6.625 14.3875 6.625C14.8327 6.625 15.2671 6.675 15.6812 6.7725C15.7289 6.7819 15.7752 6.7938 15.8189 6.8079C15.8644 6.8229 15.9076 6.8409 15.9484 6.8611L16.95 7.3125C16.95 7.3125 16.95 7.3125 16.95 7.3125L16.95 3.75C16.95 3.3358 17.2342 3.0556 17.6375 3C18.041 2.9444 18.325 3.2246 18.325 3.6375V14.5C18.325 17.8192 15.7567 20.5 12.3875 20.5C9.0183 20.5 6.45 17.8192 6.45 14.5C6.45 11.1808 9.0183 8.5 12.3875 8.5C13.0656 8.5 13.724 8.6296 14.325 8.8638V3.75C14.325 3.3358 14.6092 3.0556 15.0125 3C15.416 2.9444 15.7 3.2246 15.7 3.6375V9.375C15.0538 9.1357 14.3762 8.9992 13.695 8.9992C10.5528 8.9992 8.075 11.4769 8.075 14.6191C8.075 17.7613 10.5528 20.239 13.695 20.239C16.8371 20.239 19.3149 17.7613 19.3149 14.6191V2.25Z" />
+  </svg>
+);
+
 
   const services = [
     "Flight Booking",
@@ -314,11 +352,11 @@ ${form.message}
                     <div className="space-y-3">
                       <div className="flex justify-between">
                         <span className="text-muted-foreground">Monday - Friday</span>
-                        <span className="font-medium">9:00 AM - 6:00 PM</span>
+                        <span className="font-medium">9:00 AM - 6:00 PM EST</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-muted-foreground">Saturday</span>
-                        <span className="font-medium">10:00 AM - 4:00 PM</span>
+                        <span className="font-medium">10:00 AM - 3:00 PM EST</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-muted-foreground">Sunday</span>
