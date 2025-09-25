@@ -90,6 +90,22 @@ const Footer = () => {
                 <Phone className="h-4 w-4" />
                 <span className="text-sm opacity-90">667-770-0580</span>
               </div>
+                 <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4" />
+                <span className="text-sm opacity-90">Instagram: Ramonik.Travels</span>
+              </div>
+                    <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4" />
+                <span className="text-sm opacity-90">Facebook: Ramonik Travels</span>
+              </div>
+                    <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4" />
+                <span className="text-sm opacity-90">TikTok: RamonikTravels</span>
+              </div>
+                    <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4" />
+                <span className="text-sm opacity-90">X: RamonikTravels</span>
+              </div>
               <div className="flex items-center space-x-2">
                 <Printer className="h-4 w-4" />
                 <span className="text-sm opacity-90">667-677-6691 (Fax)</span>
