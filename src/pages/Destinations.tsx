@@ -1017,7 +1017,7 @@ const Destinations = () => {
                         className="flex items-center justify-between"
                       >
                         <span className="text-travel-red font-bold text-sm">{destination.price}</span>
-                        <Button variant="travel" size="sm" className="text-xs px-3 py-1">
+                        <Button variant="travel" size="sm" className="text-xs px-3 py-1" onClick={() => window.open("mailto:ramoniktravels@gmail.com")}>
                           Learn More
                         </Button>
                       </motion.div>
