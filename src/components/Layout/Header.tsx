@@ -52,14 +52,16 @@ const Header = () => {
   </div>
 
   {/* Text Section */}
-  <div>
-    <h1 className="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-indigo-700 via-blue-600 to-sky-500 text-transparent bg-clip-text">
-      Ramonik Travels
-    </h1>
-    <p className="text-sm text-gray-600 font-medium italic">
-      We connect you to the world ✈️
-    </p>
-  </div>
+<div className="text">
+  <h1 className="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-700 via-blue-600 to-sky-500 text-transparent bg-clip-text">
+    Ramonik Travels & Tours
+  </h1>
+  <p className="text-sm text-gray-600 italic mt-1">
+    We connect you to the world ✈️
+  </p>
+</div>
+
+
 </div>
 
             </Link>
