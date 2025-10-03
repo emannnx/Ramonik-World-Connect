@@ -39,33 +39,33 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 bg-white">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
-          >
-            <Link to="/" className="flex items-center space-x-2">
-             <div className="flex items-center space-x-3">
-  {/* Icon Background */}
-  <div className="bg-gradient-to-r from-blue-500 via-sky-400 to-indigo-600 p-3 rounded-2xl shadow-lg">
-    <Plane className="h-7 w-7 text-white drop-shadow-md transform rotate-45" />
-  </div>
+         <motion.div
+  initial={{ opacity: 0, x: -40 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.35, ease: "easeOut" }}
+>
+  <Link to="/" className="flex items-center space-x-2">
+    <div className="flex items-center space-x-3">
+      {/* Circle Logo with RTT */}
+      <div className="bg-gradient-to-r from-blue-500 via-sky-400 to-indigo-600 w-16 h-16 flex items-center justify-center rounded-full shadow-lg">
+        <span className="text-white font-extrabold text-xl tracking-widest">
+          RTT
+        </span>
+      </div>
 
-  {/* Text Section */}
-<div className="text">
-  <h1 className="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-700 via-blue-600 to-sky-500 text-transparent bg-clip-text">
-    Ramonik Travels & Tours
-  </h1>
-  <p className="text-sm text-gray-600 italic mt-1">
-    We connect you to the world ✈️
-  </p>
-</div>
+      {/* Text Section */}
+      <div className="text">
+        <h1 className="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-700 via-blue-600 to-sky-500 text-transparent bg-clip-text">
+          Ramonik Travels & Tours
+        </h1>
+        <p className="text-sm text-gray-600 italic mt-1">
+          We connect you to the world ✈️
+        </p>
+      </div>
+    </div>
+  </Link>
+</motion.div>
 
-
-</div>
-
-            </Link>
-          </motion.div>
 
           {/* Desktop Navigation */}
           <motion.nav
